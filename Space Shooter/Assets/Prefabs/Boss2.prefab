@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6087811605751917634}
   - component: {fileID: 7350683490199800077}
   - component: {fileID: -5358366113279559127}
+  - component: {fileID: 606939043703344574}
   m_Layer: 11
   m_Name: Boss2
   m_TagString: Untagged
@@ -221,5 +222,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b05cf64d45220674ba582074e6e55011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 0}
+--- !u!114 &606939043703344574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4346130638802789758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f7e30a03b305e46917b86b7c4234c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
