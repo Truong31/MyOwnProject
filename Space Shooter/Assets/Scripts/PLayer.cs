@@ -13,7 +13,7 @@ public class PLayer : MonoBehaviour
 
     void Update()
     {
-        if (isOutOfScreen())
+        if (isInScreen())
         {
             // Lấy vị trí của con trỏ chuột và chuyển đổi sang tọa độ thế giới
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -32,7 +32,7 @@ public class PLayer : MonoBehaviour
     }
 
     //Ngan khong cho Player di ra ngoai man hinh
-    private bool isOutOfScreen()
+    private bool isInScreen()
     {
         Vector3 mousePosition = Input.mousePosition;
         return mousePosition.x > 0 && mousePosition.x <= Screen.width
@@ -45,7 +45,7 @@ public class PLayer : MonoBehaviour
         float spacing = 0.25f;
 
         /*Tính toán vị trí viên đạn ở ngoài cùng. Trong đó:
-         *      + (bulletCount - 1) * spacing: tính tổng khoảng cách giữa các viên đạn
+         *      + (Player BulletCount - 1) * spacing: tính tổng khoảng cách giữa các viên đạn
          *      + /2 để lấy vị trí ở giữa
          *      + Dấu "-" để lấy giá trị ngoài cùng
          *Các viên đạn tiếp theo sẽ được sinh ra với gốc là viên đạn đầu tiên
@@ -88,7 +88,9 @@ public class PLayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy") || collision.gameObject.layer == LayerMask.NameToLayer("Asteroid"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy") 
+            || collision.gameObject.layer == LayerMask.NameToLayer("Asteroid")
+            || collision.gameObject.layer == LayerMask.NameToLayer("Enemy Bullet"))
         {
             Killed();
         }

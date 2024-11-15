@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Player Bullet"))
         {
             Destroy(collision.gameObject);
             GameManager.Instance.AddScore(10.0f);
