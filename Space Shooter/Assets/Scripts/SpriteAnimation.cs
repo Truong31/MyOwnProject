@@ -7,6 +7,7 @@ public class SpriteAnimation : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
     private int frame = 0;
+    public float rate = 0.25f;
 
     private void Awake()
     {
@@ -15,7 +16,7 @@ public class SpriteAnimation : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating(nameof(Animation), 0.25f, 0.25f);
+        InvokeRepeating(nameof(Animation), rate, rate);
     }
 
     private void Animation()

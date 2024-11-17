@@ -12,8 +12,8 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player Bullet"))
         {
             Destroy(collision.gameObject);
-            GameManager.Instance.AddScore(10.0f);
-            //this.killed.Invoke();
+            GameManager.Instance.AddScore(10);
+            this.killed.Invoke();
 
             GameObject explode = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(explode, 1.0f);

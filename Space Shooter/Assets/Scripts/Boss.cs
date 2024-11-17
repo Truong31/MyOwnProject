@@ -6,10 +6,11 @@ public class Boss : MonoBehaviour
 {
     public GameObject enemyBullet;
     public HealthBar healthBar;
+    public GameObject bossExplosion;
 
-    private int bulletCount = 6;
+    private int bulletCount = 16;
     private float radius = 1.0f;
-    public float speed = 2.0f;
+    public float speed = 8.0f;
     private int maxHealth = 10;
     private int currentHealth;
 
@@ -61,7 +62,7 @@ public class Boss : MonoBehaviour
     private IEnumerator FireBullets()
     {
         GameObject bullet = Instantiate(enemyBullet, transform.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 3.0f;
+        bullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 5.0f;
 
         yield return new WaitForSeconds(Random.Range(1, 3));
 
@@ -86,7 +87,7 @@ public class Boss : MonoBehaviour
 
             // Tao vien dan va thiet lap huong
             GameObject bullets = Instantiate(enemyBullet, bulletPosition, Quaternion.identity);
-            bullets.GetComponent<Rigidbody2D>().velocity = direction * 5f; // Toc do 5
+            bullets.GetComponent<Rigidbody2D>().velocity = direction * speed; // Toc do 5
 
             Destroy(bullets, 6.0f);
         }
@@ -102,7 +103,10 @@ public class Boss : MonoBehaviour
             if(currentHealth <= 0)
             {
                 healthBar.gameObject.SetActive(false);
+                GameObject explosion = Instantiate(bossExplosion, transform.position, Quaternion.identity);
+                CancelInvoke();
                 Destroy(gameObject);
+                Destroy(explosion, 3.0f);
             }
         }
     }
