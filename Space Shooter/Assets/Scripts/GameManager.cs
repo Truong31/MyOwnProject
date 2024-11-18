@@ -14,8 +14,9 @@ public class GameManager : MonoBehaviour
      *     - Viet them ve Enemies (Tha ra cac vien dan o vi tri bat ky) (Done)
      *     
      *     - Viet them ve Power (Xuat hien ngau nhien sau khi tieu diet duoc 1 Enemy). Bao gom 2 Power:
-     *          + Them la chan
-     *          + Tang so vien dan ban ra
+     *          + Them la chan (Done)
+     *          + Tang so vien dan ban ra   (Done)
+     *          + Xu ly ve cach xuat hien cua cac Power, tan suat xuat hien cua moi Power
      *   
      *     - Viet tiep ve cac Wave (cach chuyen doi giua cac Wave, giua luc chuyen do se hien la Wave bao nhieu)
      *     
@@ -79,5 +80,10 @@ public class GameManager : MonoBehaviour
     public void AddScore(int enemyScore)
     {
         this.score += enemyScore;
+    }
+
+    public void AddLive(int extraLive)
+    {
+        live += extraLive;
     }
 }

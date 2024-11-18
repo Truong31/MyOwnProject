@@ -8,6 +8,7 @@ public class Enemies : MonoBehaviour
     public Vector3 direction = Vector2.right;
     public AnimationCurve speed;
     public GameObject bulletPrefabs;
+    public PowerUp powerUpPrefabs;
 
     public float gap = 2.0f;
     public int rows = 4;
@@ -27,6 +28,7 @@ public class Enemies : MonoBehaviour
     private void Start()
     {
         InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
+        InvokeRepeating(nameof(SpawnPower), 1.0f, 1.0f);
     }
 
     private void Update()
@@ -81,6 +83,11 @@ public class Enemies : MonoBehaviour
             }
 
         }
+    }
+
+    private void SpawnPower()
+    {
+        
     }
 
 }

@@ -402,6 +402,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   bulletPrefabs: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+  powerUpPrefabs: {fileID: 4710192644374758022, guid: bcfd0fa3a0b10a64a8754c050e28d6ca, type: 3}
   gap: 2
   rows: 3
   columns: 3
@@ -1181,6 +1182,10 @@ PrefabInstance:
     - target: {fileID: 7339747913207674707, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
       propertyPath: m_Name
       value: Boss4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339747913207674707, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8321077778498383833, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
       propertyPath: healthBar

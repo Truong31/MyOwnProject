@@ -5,7 +5,7 @@ using UnityEngine;
 public class PLayer : MonoBehaviour
 {
     public float speed = 20f;
-    private int bulletCount = 1;
+    public int bulletCount = 1;
 
     public Bullet bulletPrefabs;
     public GameObject shield;
@@ -42,7 +42,7 @@ public class PLayer : MonoBehaviour
     //Tạo khả năng bắn đạn cho người chơi. Mỗi khi ăn 1 Power thì sẽ tăng số viên đạn bắn ra
     private void Shoot()
     {
-        float spacing = 0.25f;
+        float spacing = 0.4f;
 
         /*Tính toán vị trí viên đạn ở ngoài cùng. Trong đó:
          *      + (Player BulletCount - 1) * spacing: tính tổng khoảng cách giữa các viên đạn
@@ -50,6 +50,10 @@ public class PLayer : MonoBehaviour
          *      + Dấu "-" để lấy giá trị ngoài cùng
          *Các viên đạn tiếp theo sẽ được sinh ra với gốc là viên đạn đầu tiên
          */
+        if(bulletCount > 5)
+        {
+            bulletCount = 5;
+        }
         float startX = -((bulletCount - 1) * spacing) / 2;
         for (int i = 0; i < bulletCount; i++)
         {
@@ -65,23 +69,24 @@ public class PLayer : MonoBehaviour
         GameObject explode = Instantiate(explodePrefabs, transform.position, Quaternion.identity);
         Destroy(explode, 1.0f);
 
-        gameObject.layer = LayerMask.NameToLayer("Shield");
         gameObject.SetActive(false);
 
-        Invoke(nameof(Response), 1.5f);
-        Invoke(nameof(DisableShield), 5.0f);
-
+        Invoke(nameof(ActiveShieldPower), 1.5f);
     }
 
-    private void Response()
+    public void ActiveShieldPower()
     {
         gameObject.SetActive(true);
-        shield.SetActive(true);
-
+        StartCoroutine(ShieldPower());
     }
 
-    private void DisableShield()
+    private IEnumerator ShieldPower()
     {
+        gameObject.layer = LayerMask.NameToLayer("Shield");
+        shield.SetActive(true);
+
+        yield return new WaitForSeconds(5.0f);
+
         shield.SetActive(false);
         gameObject.layer = LayerMask.NameToLayer("Player");
     }
