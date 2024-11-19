@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemies : MonoBehaviour
+public class WaveManager : MonoBehaviour
 {
+    public List<WaveData> waves;
     public Enemy[] enemyPrefabs;
     public Vector3 direction = Vector2.right;
     public AnimationCurve speed;
     public GameObject bulletPrefabs;
-    public PowerUp powerUpPrefabs;
 
     public float gap = 2.0f;
     public int rows = 4;
@@ -20,15 +20,9 @@ public class Enemies : MonoBehaviour
     private float height => gap * (rows - 1);
     private float width => gap * (columns - 1);
 
-    private void Awake()
-    {
-        InsertRectangle();
-    }
-
     private void Start()
     {
         InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
-        InvokeRepeating(nameof(SpawnPower), 1.0f, 1.0f);
     }
 
     private void Update()
@@ -44,7 +38,7 @@ public class Enemies : MonoBehaviour
         }
     }
 
-    public void InsertRectangle()
+    private void SpawnRectangle()
     {
         float startX = -width / 2;
         float startY = height / 2;
@@ -60,6 +54,21 @@ public class Enemies : MonoBehaviour
                 enemy.killed += EnemyKilled;
             }
         }
+    }
+
+    private void SpawnCircle()
+    {
+
+    }
+
+    private void SpawnZigZag()
+    {
+
+    }
+
+    private void SpawnLine()
+    {
+
     }
 
     private void EnemyKilled()
@@ -79,15 +88,13 @@ public class Enemies : MonoBehaviour
             {
                 GameObject bullet = Instantiate(bulletPrefabs, enemies.position, Quaternion.identity);
                 bullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 5.0f;
+                Destroy(bullet, 6.0f);
                 break;
             }
 
         }
     }
 
-    private void SpawnPower()
-    {
-        
-    }
+    
 
 }

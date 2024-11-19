@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
      *     - Viet them ve Power (Xuat hien ngau nhien sau khi tieu diet duoc 1 Enemy). Bao gom 2 Power:
      *          + Them la chan (Done)
      *          + Tang so vien dan ban ra   (Done)
-     *          + Xu ly ve cach xuat hien cua cac Power, tan suat xuat hien cua moi Power
+     *          + Xu ly ve cach xuat hien cua cac Power, tan suat xuat hien cua moi Power (Done)
      *   
      *     - Viet tiep ve cac Wave (cach chuyen doi giua cac Wave, giua luc chuyen do se hien la Wave bao nhieu)
      *     

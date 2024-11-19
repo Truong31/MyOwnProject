@@ -145,6 +145,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 2685256629426251832, guid: ac886b1500ebbd048aad0ee16d9eacd5, type: 3}
+  powerUpPrefabs:
+  - {fileID: 4710192644374758022, guid: bcfd0fa3a0b10a64a8754c050e28d6ca, type: 3}
+  - {fileID: -5708411271044886602, guid: a21549b4963f611448e3a5d07bf83b78, type: 3}
+  - {fileID: 9132028503978958647, guid: 7cdbe900db5bbe14ca85d64b0dabe22e, type: 3}
 --- !u!114 &4676502841794752466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,3 +164,4 @@ MonoBehaviour:
   sprites:
   - {fileID: -373162553, guid: 17c4fb7e395095242b1e30b1e8968aad, type: 3}
   - {fileID: -433483216, guid: 17c4fb7e395095242b1e30b1e8968aad, type: 3}
+  rate: 0.25
