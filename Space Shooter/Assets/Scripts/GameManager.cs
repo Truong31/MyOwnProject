@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
      *          + Them la chan (Done)
      *          + Tang so vien dan ban ra   (Done)
      *          + Xu ly ve cach xuat hien cua cac Power, tan suat xuat hien cua moi Power (Done)
-     *   
+     *     - Chinh sua lai ve vi tri xuat hien cua cac Enemy, cach di chuyen de Enemy khong vuot ra ngoai man hinh
+     *     
      *     - Viet tiep ve cac Wave (cach chuyen doi giua cac Wave, giua luc chuyen do se hien la Wave bao nhieu)
      *     
      *     - Them cac Wave khac:

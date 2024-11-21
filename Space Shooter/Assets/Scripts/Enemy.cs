@@ -8,10 +8,14 @@ public class Enemy : MonoBehaviour
     public GameObject explosionPrefab;
     public PowerUp[] powerUpPrefabs;
 
+    private bool isDead = false;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (isDead) return;
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player Bullet"))
         {
+            isDead = true;
             Destroy(collision.gameObject);
             GameManager.Instance.AddScore(10);
             this.killed.Invoke();
@@ -26,10 +30,12 @@ public class Enemy : MonoBehaviour
 
     private void SpawnPower(Transform enemy)
     {
-        if (Random.value < 0.05f)
+        if (Random.value < 0.1f)
         {
             int randomPower = Random.Range(0, powerUpPrefabs.Length);
-            Instantiate(powerUpPrefabs[randomPower], enemy.position, Quaternion.identity);
+            PowerUp power = Instantiate(powerUpPrefabs[randomPower], enemy.position, Quaternion.identity);
+            Destroy(power, 6.0f);
         }
     }
+
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class WaveData
+public class WaveData 
 {
     public enum Pattern
     {
@@ -14,7 +14,9 @@ public class WaveData
     }
 
     public Pattern pattern;
-    public GameObject enemy;
+    public Enemy enemy;
     public Transform appearPosition;
     public int enemyCount;
+
+
 }
