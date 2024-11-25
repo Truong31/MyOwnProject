@@ -70,6 +70,7 @@ public class PLayer : MonoBehaviour
         Destroy(explode, 1.0f);
 
         gameObject.SetActive(false);
+        bulletCount = 1;
 
         Invoke(nameof(ActiveShieldPower), 1.5f);
     }

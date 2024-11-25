@@ -383,6 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 645033916}
   - component: {fileID: 645033915}
+  - component: {fileID: 645033917}
   m_Layer: 0
   m_Name: Wave Manager
   m_TagString: Untagged
@@ -403,15 +404,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
+  - pattern: 3
+    enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    enemyCount: 10
   - pattern: 1
     enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
-    appearPosition: {fileID: 622974870}
     enemyCount: 40
   - pattern: 0
     enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
-    appearPosition: {fileID: 622974870}
     enemyCount: 40
-  direction: {x: 1, y: 0, z: 0}
+  enemyActive: []
   speed:
     serializedVersion: 2
     m_Curve:
@@ -446,12 +448,24 @@ Transform:
   m_GameObject: {fileID: 645033914}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -42.2, y: 4, z: 0}
+  m_LocalPosition: {x: -7.4, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &645033917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645033914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f5e07441a4ba34498ab2a9891aaad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &645676205
 GameObject:
   m_ObjectHideFlags: 0

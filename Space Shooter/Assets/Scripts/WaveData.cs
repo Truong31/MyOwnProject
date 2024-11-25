@@ -15,7 +15,6 @@ public class WaveData
 
     public Pattern pattern;
     public Enemy enemy;
-    public Transform appearPosition;
     public int enemyCount;
 
 

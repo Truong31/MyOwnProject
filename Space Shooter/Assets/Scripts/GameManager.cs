@@ -13,21 +13,24 @@ public class GameManager : MonoBehaviour
     /*TODO:
      *     - Viet them ve Enemies (Tha ra cac vien dan o vi tri bat ky) (Done)
      *     
-     *     - Viet them ve Power (Xuat hien ngau nhien sau khi tieu diet duoc 1 Enemy). Bao gom 2 Power:
+     *     - Viet them ve Power (Xuat hien ngau nhien sau khi tieu diet duoc 1 Enemy). Bao gom 3 Power:
      *          + Them la chan (Done)
      *          + Tang so vien dan ban ra   (Done)
+     *          + Them mang (Done)
      *          + Xu ly ve cach xuat hien cua cac Power, tan suat xuat hien cua moi Power (Done)
-     *     - Chinh sua lai ve vi tri xuat hien cua cac Enemy, cach di chuyen de Enemy khong vuot ra ngoai man hinh
+     *     - Cach di chuyen de Enemy khong vuot ra ngoai man hinh (Done)
      *     
-     *     - Viet tiep ve cac Wave (cach chuyen doi giua cac Wave, giua luc chuyen do se hien la Wave bao nhieu)
      *     
      *     - Them cac Wave khac:
-     *          + Cac Wave se co thu tu 1-1, 1-2, 2-1, 2-2....
-     *          + Cac enemy xuat hien thanh hinh tron
-     *          + Cac enemy xuat hien thanh hang va di qua di lai voi toc do nhanh
+     *          + Cac enemy xuat hien thanh hinh chu nhat (Done)
+     *          + Cac enemy xuat hien thanh hinh tron (Done)
+     *          + Cac enemy xuat hien thanh hang (Done)
+     *          + Cac enemy xuat hien thanh hinh ZigZag
      *          + Cac khoi thien thach roi (Keo dai khoang 10s) tu goc tren ben trai, roi cheo. 
      *              Chung co 3 kich thuoc tuong ung so vien dan co the chiu(To nhat chiu duoc 3 vien va giam dan)
      *          + Het 4 Wave se xuat hien 1 MiniBoss(Di chuyen lung tung, tha ra cac vien dan co the toa ra thanh nhieu vien khac)
+     *          + Cach chuyen doi giua cac Wave, giua luc chuyen do se hien la Wave bao nhieu
+     *          + Cac Wave se co thu tu 1-1, 1-2, 2-1, 2-2....
      *          + Se co tong cong 4 dot, moi dot gom 4 Wave thuong va 1 Wave MiniBoss
      *          + Dot cuoi sau khi vuot qua 4 Wave se suat hien Boss chinh
      *          
