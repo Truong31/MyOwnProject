@@ -28,6 +28,15 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Background"))
+        {
+            this.killed.Invoke();
+            Destroy(gameObject);
+        }
+    }
+
     private void SpawnPower(Transform enemy)
     {
         if (Random.value < 0.1f)

@@ -5,14 +5,37 @@ using UnityEngine;
 public class WaveMovement : MonoBehaviour
 {
     private Vector3 direction = Vector3.right;
+    private float speed;
+    private MovementType movementType;
 
+    public void Initialize(float speed, MovementType movementType)
+    {
+        this.speed = speed;
+        this.movementType = movementType;
+    }
     private void Update()
     {
-        Movement();
+        switch (movementType)
+        {
+            case MovementType.Circle:
+                Circle();
+                break;
+            case MovementType.Horizontal:
+                Horizontal();
+                break;
+            case MovementType.Diagonal:
+                Diagonal();
+                break;
+            case MovementType.ZigZag:
+                ZigZag();
+                break;
+
+        }
     }
-    private void Movement()
+    private void Horizontal()
     {
-        transform.position += direction * 5.0f * Time.deltaTime;
+        transform.position += direction * speed * Time.deltaTime;
+
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
 
@@ -22,39 +45,40 @@ public class WaveMovement : MonoBehaviour
             {
                 continue;
             }
-            if (direction == Vector3.right && enemy.position.x >= (rightEdge.x - 1.0f))
-            {
-                direction.x *= -1.0f;
-            }
-            else if (direction == Vector3.left && enemy.position.x <= (leftEdge.x + 1.0f))
+            if (direction == Vector3.right && enemy.position.x >= (rightEdge.x - 1.0f) 
+                || direction == Vector3.left && enemy.position.x <= (leftEdge.x + 1.0f))
             {
                 direction.x *= -1.0f;
             }
         }
     }
 
-    private void ZigZagMovement(WaveData wave)
+    private void Diagonal()
     {
-        float amplitude = 3f;  // Bien do (Do rong cua ZigZag)
-        float frequency = 2f; // Tan so (Toc do qua lai)
-        float verticalSpeed = 2f; // Toc do di chuyen doc
-        float time = Time.time;
+        Vector3 direction = new Vector3(1, -1, 0);
+        transform.position += direction * speed * Time.deltaTime;
 
-        // Tinh toan vi tri moi
-        float x = transform.position.x + Mathf.Sin(time * frequency) * amplitude;
-        float y = transform.position.y - verticalSpeed * time;
+        
+    }
 
-        // Cap nhat vi tri
-        Vector3 position = new Vector3(x, y, 0);
+    private void ZigZag()
+    {
 
-        Enemy enemy = Instantiate(wave.enemy, transform.position + position, Quaternion.identity);
+    }
 
-        enemy.transform.SetParent(transform);
+    private void Circle()
+    {
 
-        // Xoa Enemy neu ra khoi man hinh
-        if (transform.position.y < -Camera.main.orthographicSize)
+    }
+
+    private void CheckScreenBounds(Transform enemyPosition)
+    {
+        Vector3 screenPoint = Camera.main.WorldToViewportPoint(enemyPosition.position);
+
+        // Neu cham bien trai hoac phai, doi huong
+        if (screenPoint.x < 0f || screenPoint.x > 1f)
         {
-            Destroy(gameObject);
+            //direction.x *= -1.0f; ; // Dao huong ZigZag
         }
     }
 }

@@ -16,7 +16,6 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
-        WaveMovement movement = GetComponent<WaveMovement>();
         InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
         StartCoroutine(SpawnWaves());
     }
@@ -58,21 +57,43 @@ public class WaveManager : MonoBehaviour
     private void SpawnLine(WaveData wave)
     {
         totalEnemies = wave.enemyCount;
+        transform.position = wave.spawnPosition.position;
+
         float gap = 2.0f;
         float startX = gap * (wave.enemyCount - 1)/2;
+        
         for(int i = 0; i < wave.enemyCount; i++)
         {
             Vector3 position = new Vector3(startX + gap * i, 0, 0);
             Enemy enemy = Instantiate(wave.enemy, transform.position + position, Quaternion.identity);
-            enemy.killed += EnemyKilled;
+            
             enemy.transform.SetParent(transform);
+            WaveMovement movement = GetComponent<WaveMovement>();
+            movement.Initialize(5.0f, wave.movementType);
+
+            //Vector3 enemyPosition = Camera.main.WorldToViewportPoint(enemy.transform.localPosition);
+
+            //if (!enemy.gameObject.activeInHierarchy) // Kiem tra xem doi tuong co dang hoat dong
+            //{
+            //    continue;
+            //}
+            //if (enemyPosition.x > 1 || enemyPosition.x < 0 || enemyPosition.y < 0)
+            //{
+            //    EnemyKilled();
+            //    Destroy(enemy);
+            //}
+
+            enemy.killed += EnemyKilled;
         }
+        
     }
 
     //Tao Wave hinh chu nhat
     private void SpawnRectangle(WaveData wave)
     {
         totalEnemies = wave.enemyCount;
+        transform.position = wave.spawnPosition.position;
+
         float gap = 2.0f;
         int rows = 4;
         int columns = Mathf.CeilToInt((float)wave.enemyCount / rows);
@@ -90,8 +111,9 @@ public class WaveManager : MonoBehaviour
 
                 Enemy enemy = Instantiate(wave.enemy, position + transform.position, Quaternion.identity);
                 enemy.transform.SetParent(transform);
+                WaveMovement movement = GetComponent<WaveMovement>();
+                movement.Initialize(5.0f, wave.movementType);
 
-                enemyActive.Add(enemy);
                 enemy.killed += EnemyKilled;
             }
         }
@@ -100,7 +122,9 @@ public class WaveManager : MonoBehaviour
     //Tao Wave hinh tron
     private void SpawnCircle(WaveData wave, float radius)
     {
+        transform.position = wave.spawnPosition.position;
         totalEnemies = wave.enemyCount;
+
         for(int i = 0; i < wave.enemyCount; i++)
         {
             float angle = (i * Mathf.PI * 2) / wave.enemyCount;
@@ -110,7 +134,8 @@ public class WaveManager : MonoBehaviour
 
             Vector3 position = new Vector3(x, y, 0);
             Enemy enemy = Instantiate(wave.enemy, position + transform.position, Quaternion.identity);
-
+            WaveMovement movement = GetComponent<WaveMovement>();
+            movement.Initialize(5.0f, wave.movementType);
             enemy.transform.SetParent(transform);
             enemy.killed += EnemyKilled;
         }
@@ -124,12 +149,13 @@ public class WaveManager : MonoBehaviour
         Enemy enemy = Instantiate(wave.enemy, transform.position, Quaternion.identity);
 
         enemy.transform.SetParent(transform);
+        enemy.killed += EnemyKilled;
 
         // Xoa Enemy neu ra khoi man hinh
-        if (enemy.transform.position.y < -Camera.main.orthographicSize)
-        {
-            Destroy(enemy);
-        }
+        //if (enemy.transform.position.y < -Camera.main.orthographicSize)
+        //{
+        //    Destroy(enemy);
+        //}
     }
 
     private void EnemyKilled()

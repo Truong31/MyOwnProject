@@ -29,5 +29,4 @@ public class BackGround : MonoBehaviour
             background2.position = new Vector3(background2.position.x, background1.position.y + backgroundHeight, background2.position.z);
         }
     }
-
 }
