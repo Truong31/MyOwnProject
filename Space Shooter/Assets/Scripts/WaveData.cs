@@ -5,9 +5,10 @@ using UnityEngine;
 public enum MovementType
 {
     Horizontal,
-    Diagonal, //Cheo
+    BouncePatrol, //Cheo
     Circle,
-    ZigZag
+    ZigZag,
+    Default
 }
 
 [System.Serializable]
@@ -17,12 +18,13 @@ public class WaveData
     {
         Circle,
         Rectangle,
-        ZigZag,
-        Line
+        Line,
+        Asteroid
     }
 
     public Pattern pattern;
     public Enemy enemy;
+    public Asteroid asteroid;
     public int enemyCount;
     public Transform spawnPosition;
     public MovementType movementType;

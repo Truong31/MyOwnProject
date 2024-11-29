@@ -30,8 +30,10 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (isDead) return;
         if (collision.gameObject.layer == LayerMask.NameToLayer("Background"))
         {
+            isDead = true;
             this.killed.Invoke();
             Destroy(gameObject);
         }

@@ -11,10 +11,18 @@ public class Bullet : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
+    private void Update()
+    {
+        Vector3 topEdge = Camera.main.ViewportToWorldPoint(Vector3.up);
+        if (transform.position.y > topEdge.y)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void Projectile(Vector2 direction)
     {
         rigidbody2D.AddForce(direction * speed);
-        Destroy(gameObject, 5f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

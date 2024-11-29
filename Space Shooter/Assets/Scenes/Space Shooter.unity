@@ -206,6 +206,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &338454259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 338454260}
+  m_Layer: 0
+  m_Name: Center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &338454260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338454259}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1328132562}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &490936589
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,40 +436,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - pattern: 3
-    enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    enemy: {fileID: 0}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
     enemyCount: 10
-    spawnPosition: {fileID: 786865545}
-    movementType: 1
-  - pattern: 1
+    spawnPosition: {fileID: 338454260}
+    movementType: 4
+  - pattern: 2
     enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
-    enemyCount: 40
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    enemyCount: 10
     spawnPosition: {fileID: 1682834737}
     movementType: 0
   enemyActive: []
-  speed:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  speed: 8
   bulletPrefabs: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
 --- !u!4 &645033916
 Transform:
@@ -948,8 +958,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1306751731}
   - component: {fileID: 1306751730}
-  - component: {fileID: 1306751732}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -988,51 +997,6 @@ Transform:
   - {fileID: 706211824}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1306751732
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306751729}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 44, y: 31}
-  m_EdgeRadius: 0
 --- !u!1 &1328132561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1028,7 @@ Transform:
   m_Children:
   - {fileID: 786865545}
   - {fileID: 1682834737}
+  - {fileID: 338454260}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1682834736

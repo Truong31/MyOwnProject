@@ -7,7 +7,7 @@ public class WaveManager : MonoBehaviour
     public List<WaveData> waves;
     public List<Enemy> enemyActive;
 
-    public AnimationCurve speed;
+    public float speed = 6f;
     public GameObject bulletPrefabs;
 
     private int currentWaveIndex = 0;
@@ -44,48 +44,13 @@ public class WaveManager : MonoBehaviour
             case WaveData.Pattern.Rectangle:
                 SpawnRectangle(wave);
                 break;
-            case WaveData.Pattern.ZigZag:
-                SpawnZigZag(wave);
-                break;
             case WaveData.Pattern.Line:
                 SpawnLine(wave);
                 break;
+            case WaveData.Pattern.Asteroid:
+                SpawnAsteroid(wave);
+                break;
         }
-    }
-
-    //Tao Wave hinh Line
-    private void SpawnLine(WaveData wave)
-    {
-        totalEnemies = wave.enemyCount;
-        transform.position = wave.spawnPosition.position;
-
-        float gap = 2.0f;
-        float startX = gap * (wave.enemyCount - 1)/2;
-        
-        for(int i = 0; i < wave.enemyCount; i++)
-        {
-            Vector3 position = new Vector3(startX + gap * i, 0, 0);
-            Enemy enemy = Instantiate(wave.enemy, transform.position + position, Quaternion.identity);
-            
-            enemy.transform.SetParent(transform);
-            WaveMovement movement = GetComponent<WaveMovement>();
-            movement.Initialize(5.0f, wave.movementType);
-
-            //Vector3 enemyPosition = Camera.main.WorldToViewportPoint(enemy.transform.localPosition);
-
-            //if (!enemy.gameObject.activeInHierarchy) // Kiem tra xem doi tuong co dang hoat dong
-            //{
-            //    continue;
-            //}
-            //if (enemyPosition.x > 1 || enemyPosition.x < 0 || enemyPosition.y < 0)
-            //{
-            //    EnemyKilled();
-            //    Destroy(enemy);
-            //}
-
-            enemy.killed += EnemyKilled;
-        }
-        
     }
 
     //Tao Wave hinh chu nhat
@@ -112,7 +77,7 @@ public class WaveManager : MonoBehaviour
                 Enemy enemy = Instantiate(wave.enemy, position + transform.position, Quaternion.identity);
                 enemy.transform.SetParent(transform);
                 WaveMovement movement = GetComponent<WaveMovement>();
-                movement.Initialize(5.0f, wave.movementType);
+                movement.Initialize(speed, wave.movementType);
 
                 enemy.killed += EnemyKilled;
             }
@@ -135,27 +100,52 @@ public class WaveManager : MonoBehaviour
             Vector3 position = new Vector3(x, y, 0);
             Enemy enemy = Instantiate(wave.enemy, position + transform.position, Quaternion.identity);
             WaveMovement movement = GetComponent<WaveMovement>();
-            movement.Initialize(5.0f, wave.movementType);
+            movement.Initialize(speed, wave.movementType);
             enemy.transform.SetParent(transform);
             enemy.killed += EnemyKilled;
         }
     }
 
-    //Tao Wave hinh ZigZag
-    private void SpawnZigZag(WaveData wave)
+    //Tao Wave dang Line
+    private void SpawnLine(WaveData wave)
+    {
+        totalEnemies = wave.enemyCount;
+        transform.position = wave.spawnPosition.position;
+
+        float gap = 2.0f;
+        float startX = -gap * (wave.enemyCount - 1) / 2;
+
+        for (int i = 0; i < wave.enemyCount; i++)
+        {
+            Vector3 position = new Vector3(startX + gap * i, 0, 0);
+            Enemy enemy = Instantiate(wave.enemy, transform.position + position, Quaternion.identity);
+
+            enemy.transform.SetParent(transform);
+            WaveMovement movement = GetComponent<WaveMovement>();
+            movement.Initialize(speed, wave.movementType);
+
+            enemy.killed += EnemyKilled;
+        }
+
+    }
+
+    //Tao Wave cac thien thach
+    private void SpawnAsteroid(WaveData wave)
     {
         totalEnemies = wave.enemyCount;
 
-        Enemy enemy = Instantiate(wave.enemy, transform.position, Quaternion.identity);
+        Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
+        Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
 
-        enemy.transform.SetParent(transform);
-        enemy.killed += EnemyKilled;
-
-        // Xoa Enemy neu ra khoi man hinh
-        //if (enemy.transform.position.y < -Camera.main.orthographicSize)
-        //{
-        //    Destroy(enemy);
-        //}
+        int count = 0;
+        while (wave.enemyCount > count)
+        {
+            count++;
+            transform.position = wave.spawnPosition.position;
+            Vector3 position = new Vector3(Random.Range(leftEdge.x + 2.0f, rightEdge.x - 2.0f), transform.position.y, transform.position.z);
+            Asteroid asteroid = Instantiate(wave.asteroid, position, Quaternion.identity);
+            asteroid.killed += EnemyKilled;
+        }
     }
 
     private void EnemyKilled()

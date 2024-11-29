@@ -61,6 +61,7 @@ public class PLayer : MonoBehaviour
 
             Bullet bullet = Instantiate(bulletPrefabs, position + transform.position, transform.rotation);
             bullet.Projectile(transform.up * 5f);
+
         }
     }
 

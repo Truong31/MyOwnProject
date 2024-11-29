@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
      *          + Cac enemy xuat hien thanh hinh chu nhat (Done)
      *          + Cac enemy xuat hien thanh hinh tron (Done)
      *          + Cac enemy xuat hien thanh hang (Done)
-     *          + Cac enemy xuat hien thanh hang, di theo duong cheo
+     *          + Cac enemy xuat hien thanh hang, di theo duong cheo, doi huong moi khi va vao thanh(Done)
      *          + Cac khoi thien thach roi (Keo dai khoang 10s) tu goc tren ben trai, roi cheo. 
      *              Chung co 3 kich thuoc tuong ung so vien dan co the chiu(To nhat chiu duoc 3 vien va giam dan)
      *          + Het 4 Wave se xuat hien 1 MiniBoss(Di chuyen lung tung, tha ra cac vien dan co the toa ra thanh nhieu vien khac)
