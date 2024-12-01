@@ -7,9 +7,9 @@ public class Asteroid : MonoBehaviour
     public System.Action killed;
 
     private new Rigidbody2D rigidbody;
-    private Vector3 direction;
-    private Vector3 position;
     public GameObject explosionPrefabs;
+
+    private Vector3 direction;
 
     private int maxHit;
     public float speed = 40;
@@ -32,12 +32,12 @@ public class Asteroid : MonoBehaviour
         maxHit = size*2;
         transform.localScale = Vector3.one * size;
 
-        Projectile();
+        Attack();
     }
 
     private void Update()
     {
-        position = Camera.main.WorldToViewportPoint(transform.position);
+        Vector3 position = Camera.main.WorldToViewportPoint(transform.position);
         if(position.x > 1.5f || position.x < -0.5f || position.y > 1.5f || position.y < -0.5f)
         {
             killed.Invoke();
@@ -45,12 +45,13 @@ public class Asteroid : MonoBehaviour
         }
     }
 
-    private void Projectile()
+    private void Attack()
     {
         speed /= size;
         rigidbody.AddForce(direction * speed, ForceMode2D.Impulse);
     }
 
+    //Kiem tra va cham voi bullet
     private void OnCollisionEnter2D(Collision2D collision)
     {
         rigidbody.velocity = Vector2.zero;

@@ -38,16 +38,19 @@ public class WaveManager : MonoBehaviour
     {
         switch (wave.pattern)
         {
-            case WaveData.Pattern.Circle:
+            case Pattern.Circle:
                 SpawnCircle(wave, 8.0f);
                 break;
-            case WaveData.Pattern.Rectangle:
+            case Pattern.Rectangle:
                 SpawnRectangle(wave);
                 break;
-            case WaveData.Pattern.Line:
+            case Pattern.Line:
                 SpawnLine(wave);
                 break;
-            case WaveData.Pattern.Asteroid:
+            case Pattern.Asteroid:
+                SpawnAsteroid(wave);
+                break;
+            case Pattern.Planet:
                 SpawnAsteroid(wave);
                 break;
         }
@@ -129,7 +132,7 @@ public class WaveManager : MonoBehaviour
 
     }
 
-    //Tao Wave cac thien thach
+    //Tao Wave cac Asteroid hoac cac Planet
     private void SpawnAsteroid(WaveData wave)
     {
         totalEnemies = wave.enemyCount;
@@ -143,8 +146,17 @@ public class WaveManager : MonoBehaviour
             count++;
             transform.position = wave.spawnPosition.position;
             Vector3 position = new Vector3(Random.Range(leftEdge.x + 2.0f, rightEdge.x - 2.0f), transform.position.y, transform.position.z);
-            Asteroid asteroid = Instantiate(wave.asteroid, position, Quaternion.identity);
-            asteroid.killed += EnemyKilled;
+            if(wave.pattern == Pattern.Asteroid)
+            {
+                Asteroid asteroid = Instantiate(wave.asteroid, position, Quaternion.identity);
+                asteroid.killed += EnemyKilled;
+            }
+            else if(wave.pattern == Pattern.Planet)
+            {
+                int random = Random.Range(0, wave.planet.Length);
+                Planet planet = Instantiate(wave.planet[random], position, Quaternion.identity);
+                planet.killed += EnemyKilled;
+            }
         }
     }
 
