@@ -11,17 +11,16 @@ public class Boss : MonoBehaviour
     private int bulletCount = 16;
     private float radius = 1.0f;
     public float speed = 8.0f;
-    private int maxHealth = 10;
-    private int currentHealth;
+    public int maxHealth = 10;
+    public int currentHealth { get; private set; }
 
-
-    private void Start()
+    public virtual void Start()
     {
         healthBar.gameObject.SetActive(true);
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
-        InvokeRepeating(nameof(Movement), 5.0f, 5.0f);
+        InvokeRepeating(nameof(Movement), 3.0f, 3.0f);
         InvokeRepeating(nameof(Attack), 3.0f, 3.0f);
     }
 
@@ -92,7 +91,6 @@ public class Boss : MonoBehaviour
             Destroy(bullets, 6.0f);
         }
     }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

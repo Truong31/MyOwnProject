@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    public static WaveManager Instance { get; private set; }
+
     public List<WaveData> waves;
     public List<Enemy> enemyActive;
+    public int waveId = 1;
 
     public float speed = 6f;
     public GameObject bulletPrefabs;
@@ -13,6 +16,19 @@ public class WaveManager : MonoBehaviour
     private int currentWaveIndex = 0;
     private int totalEnemies;
     private int enemiesKilled = 0;
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -30,6 +46,7 @@ public class WaveManager : MonoBehaviour
             currentWaveIndex++;
             yield return new WaitUntil(KillAllEnemies);
             enemiesKilled = 0;
+            waveId++;
             yield return new WaitForSeconds(3.0f);
         }
     }
@@ -52,6 +69,12 @@ public class WaveManager : MonoBehaviour
                 break;
             case Pattern.Planet:
                 SpawnAsteroid(wave);
+                break;
+            case Pattern.Boss:
+                SpawnBoss(wave);
+                break;
+            case Pattern.BigBoss:
+                SpawnBigBoss(wave);
                 break;
         }
     }
@@ -158,6 +181,21 @@ public class WaveManager : MonoBehaviour
                 planet.killed += EnemyKilled;
             }
         }
+    }
+
+    private void SpawnBoss(WaveData wave)
+    {
+        totalEnemies = wave.enemyCount;
+
+        int random = Random.Range(0, wave.boss.Length);
+        wave.boss[random].gameObject.SetActive(true);
+
+    }
+
+    private void SpawnBigBoss(WaveData wave)
+    {
+        totalEnemies = wave.enemyCount;
+        wave.bigBoss.gameObject.SetActive(true);
     }
 
     private void EnemyKilled()

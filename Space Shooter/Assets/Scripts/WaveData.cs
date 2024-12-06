@@ -16,7 +16,9 @@ public enum Pattern
     Rectangle,
     Line,
     Asteroid,
-    Planet
+    Planet,
+    Boss,
+    BigBoss
 }
 
 [System.Serializable]
@@ -26,6 +28,8 @@ public class WaveData
     public Enemy enemy;
     public Asteroid asteroid;
     public Planet[] planet;
+    public Boss[] boss;
+    public BigBoss bigBoss;
     public int enemyCount;
     public Transform spawnPosition;
     public MovementType movementType;

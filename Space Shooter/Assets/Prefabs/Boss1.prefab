@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5174970906416862700}
   - component: {fileID: 5741797638744343154}
   - component: {fileID: 6427289307596157711}
-  - component: {fileID: -4185259110666069036}
   - component: {fileID: 1561372832362897425}
   m_Layer: 11
   m_Name: Boss1
@@ -30,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.75, y: 1.75, z: 1}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -196,19 +195,6 @@ PolygonCollider2D:
       - {x: 0.44000408, y: 0.4393235}
       - {x: 0.3774915, y: 0.4392681}
   m_UseDelaunayMesh: 0
---- !u!114 &-4185259110666069036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6688575681914464737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b05cf64d45220674ba582074e6e55011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 0}
 --- !u!114 &1561372832362897425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,4 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f7e30a03b305e46917b86b7c4234c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyBullet: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
   healthBar: {fileID: 0}
+  bossExplosion: {fileID: 1634694064389597777, guid: 57f45c57e8813014d8b4f2d23710191d, type: 3}
+  speed: 8
