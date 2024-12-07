@@ -37,8 +37,8 @@ public class GameManager : MonoBehaviour
      *      - Viet them ve Boss chinh:
      *          + Viet lai Healthbar
      *          + Co 100 mau (co the thay doi them de phu hop)
-     *          + Ban dau se tha ra cac vien dan giong MiniBoss
-     *          + Khi con 60 mau se tha ra cac ten lua co kha nang duoi theo nguoi choi(Ten lua chiu duoc 3 phat ban cua nguoi choi)
+     *          + Ban dau se tha ra cac vien dan giong MiniBoss (Done)
+     *          + Khi con 60 mau se tha ra cac ten lua co kha nang duoi theo nguoi choi(Ten lua chiu duoc 1 phat ban cua nguoi choi) (Done)
      *          + Khi con 30 mau se tha ra cac qua min co kha nang phat no dien rong sau 1 khoang thoi gian. O trong pham vi vu no se chet
      *          
      *      - Them man hinh bat dau tro choi. Bao gom:

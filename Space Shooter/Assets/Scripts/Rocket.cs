@@ -6,51 +6,57 @@ public class Rocket : MonoBehaviour
 {
     private Transform player;
     private new Rigidbody2D rigidbody2D;
-    private int speed;
-    private int maxHit = 3;
-    private float moveDirection;
+    public GameObject explosionPrefabs;
+
+    private float speed;
+    private Vector3 moveDirection = Vector3.left;
 
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
-    void FixedUpdate()
+
+    private void Start()
     {
-        RocketMovement();
+        speed = Random.Range(8f, 10f);
+        Invoke(nameof(RocketBehaviour), 5.0f);
     }
 
-    private void RocketMovement()
+    private void Update()
     {
-        StartCoroutine(RocketBehaviour());
-    }
+        transform.position += moveDirection * speed * Time.deltaTime;
 
-    private IEnumerator RocketBehaviour()
-    {
-        speed = Random.Range(8, 10);
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
 
+        if (transform.position.x >= (rightEdge.x - 0.5f) || transform.position.x <= (leftEdge.x + 0.5f))
+        {
+            moveDirection.x *= -1;
+        }
+
+    }
+
+    private void RocketBehaviour()
+    {
+        StartCoroutine(Projectile());
+    }
+
+    //Rocket phong theo huong den Player sau 5s
+    private IEnumerator Projectile()
+    {
         player = GameManager.Instance.playerPosition;
-        if(player.position.x > 0 && transform.position.x < rightEdge.x)
-        {
-            moveDirection = 1f;
-        }
-        else if(player.position.x < 0 && transform.position.x > leftEdge.x)
-        {
-            moveDirection = -1f;
-        }
 
-        rigidbody2D.velocity = new Vector2(speed * moveDirection, rigidbody2D.velocity.y);
+        moveDirection = Vector3.zero;
 
-        Vector3 clampedPosition = transform.position;
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, leftEdge.x + 0.5f, rightEdge.x - 0.5f);
-        transform.position = clampedPosition;
+        Vector3 direction = (player.position - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
         yield return new WaitForSeconds(1.0f);
 
-        Vector3 direction = (player.position - transform.position).normalized;
-        rigidbody2D.AddForce(direction * 15f);
-        Destroy(gameObject, 3.0f);
+        rigidbody2D.AddForce(direction * speed * speed * 0.5f, ForceMode2D.Impulse);
+
+        Destroy(gameObject, 2.0f);
 
     }
 
@@ -58,11 +64,9 @@ public class Rocket : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player Bullet"))
         {
-            maxHit--;
-            if(maxHit <= 0)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
+            GameObject explosion = Instantiate(explosionPrefabs, transform.position, Quaternion.identity);
+            Destroy(explosion, 1.0f);
         }
     }
 }
