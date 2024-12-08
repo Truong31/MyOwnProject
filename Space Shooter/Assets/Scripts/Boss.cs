@@ -20,7 +20,7 @@ public class Boss : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
-        InvokeRepeating(nameof(Movement), 3.0f, 3.0f);
+        InvokeRepeating(nameof(Movement), 1.0f, 3.0f);
         InvokeRepeating(nameof(Attack), 3.0f, 3.0f);
     }
 

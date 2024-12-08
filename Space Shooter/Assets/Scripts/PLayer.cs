@@ -99,7 +99,8 @@ public class PLayer : MonoBehaviour
             || collision.gameObject.layer == LayerMask.NameToLayer("Asteroid")
             || collision.gameObject.layer == LayerMask.NameToLayer("Enemy Bullet")
             || collision.gameObject.layer == LayerMask.NameToLayer("Boss")
-            || collision.gameObject.layer == LayerMask.NameToLayer("Rocket"))
+            || collision.gameObject.layer == LayerMask.NameToLayer("Rocket")
+            || collision.gameObject.layer == LayerMask.NameToLayer("Bomb"))
         {
             Killed();
             

@@ -1741,6 +1741,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
+      propertyPath: bombPrefabs
+      value: 
+      objectReference: {fileID: 7998906955291650822, guid: 91f309662e1aeb444ae9f2677bae7498, type: 3}
+    - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
       propertyPath: enemyBullet
       value: 
       objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}

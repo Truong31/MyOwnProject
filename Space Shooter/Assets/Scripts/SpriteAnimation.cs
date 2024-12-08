@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpriteAnimation : MonoBehaviour
 {
+    private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
     private int frame = 0;
@@ -11,6 +12,10 @@ public class SpriteAnimation : MonoBehaviour
 
     private void Awake()
     {
+        if(boxCollider == null)
+        {
+            boxCollider = GetComponent<BoxCollider2D>();
+        }
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -29,6 +34,15 @@ public class SpriteAnimation : MonoBehaviour
         {
             spriteRenderer.sprite = sprites[frame];
             frame++;
+            UpdateColliderSize();
+        }
+    }
+
+    private void UpdateColliderSize()
+    {
+        if(spriteRenderer != null && boxCollider != null)
+        {
+            boxCollider.size = spriteRenderer.sprite.bounds.size;
         }
     }
 }
