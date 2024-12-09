@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public Transform playerPosition;
+    public GameObject pausePanel;
     public int score { get; private set; }
     public int live { get; private set; }
 
@@ -39,11 +40,12 @@ public class GameManager : MonoBehaviour
      *          + Co 100 mau (co the thay doi them de phu hop)
      *          + Ban dau se tha ra cac vien dan giong MiniBoss (Done)
      *          + Khi con 60 mau se tha ra cac ten lua co kha nang duoi theo nguoi choi(Ten lua chiu duoc 1 phat ban cua nguoi choi) (Done)
-     *          + Khi con 30 mau se tha ra cac qua min co kha nang phat no dien rong sau 1 khoang thoi gian. O trong pham vi vu no se chet
+     *          + Khi con 30 mau se tha ra cac qua min co kha nang phat no dien rong sau 1 khoang thoi gian.
+     *          O trong pham vi vu no se chet (90%. Sửa lại khi bắn trúng, bomb không bị hất lên)
      *          
      *      - Them man hinh bat dau tro choi. Bao gom:
-     *          + 1 nut bat dau(Giua man hinh)
-     *          + 1 nut Option(Dieu chinh am luong, tat tieng)
+     *          + 1 nut bat dau(Giua man hinh) (Done)
+     *          + 1 nut Option(Dieu chinh am luong, tat tieng) (Done)
      *          
      *      - Them man hinh Pause. Bao gom 3 nut:
      *          + 1 nut New Game
@@ -68,11 +70,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        PauseGame();
+    }
+
     public void NewGame()
     {
         live = 3;
         score = 0;
 
+    }
+
+    private void PauseGame()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButton(1))
+        {
+            pausePanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+        
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
     }
 
     private void OnDestroy()

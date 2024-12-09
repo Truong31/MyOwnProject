@@ -23,7 +23,7 @@ public class Bomb : MonoBehaviour
         rigidbody2D.isKinematic = true;
         GameObject bomb = Instantiate(bombExplosion, transform.position, Quaternion.identity);
         Destroy(bomb, 1.5f);
-        Destroy(gameObject, 1.5f); 
+        Destroy(gameObject); 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
