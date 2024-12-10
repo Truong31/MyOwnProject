@@ -15,20 +15,24 @@ public class Bomb : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(BombBehaviour), Random.Range(1.5f, 2f));
+        Invoke(nameof(BombBehaviour), 5f);
     }
 
+    //Xu ly hanh vi cho Bomb: sau 1 khoang thoi gian se phat no
     private void BombBehaviour()
     {
-        rigidbody2D.isKinematic = true;
-        GameObject bomb = Instantiate(bombExplosion, transform.position, Quaternion.identity);
-        Destroy(bomb, 1.5f);
-        Destroy(gameObject); 
+        if (gameObject.activeInHierarchy)
+        {
+            rigidbody2D.isKinematic = true;
+            GameObject bombExplode = Instantiate(bombExplosion, transform.position, Quaternion.identity);
+            Destroy(bombExplode, 1.5f);
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("PLayer Bullet"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Player Bullet"))
         {
             maxHit--;
             if(maxHit <= 0)

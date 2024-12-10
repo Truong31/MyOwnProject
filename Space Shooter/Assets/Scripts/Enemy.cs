@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
         if (isDead) return;
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player Bullet"))
         {
+            SoundManager.Instance.EnemyDeathSfx();
+
             isDead = true;
             Destroy(collision.gameObject);
             GameManager.Instance.AddScore(10);

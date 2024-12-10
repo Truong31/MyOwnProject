@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
      *          + Dot cuoi sau khi vuot qua 4 Wave se suat hien Boss chinh
      *          
      *      - Viet them ve Boss chinh:
-     *          + Viet lai Healthbar
+     *          + Viet lai Healthbar (Done)
      *          + Co 100 mau (co the thay doi them de phu hop)
      *          + Ban dau se tha ra cac vien dan giong MiniBoss (Done)
      *          + Khi con 60 mau se tha ra cac ten lua co kha nang duoi theo nguoi choi(Ten lua chiu duoc 1 phat ban cua nguoi choi) (Done)

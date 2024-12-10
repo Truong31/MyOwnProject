@@ -42,6 +42,7 @@ public class PLayer : MonoBehaviour
     //Tạo khả năng bắn đạn cho người chơi. Mỗi khi ăn 1 Power thì sẽ tăng số viên đạn bắn ra
     private void Shoot()
     {
+        SoundManager.Instance.ShootSfx();
         float spacing = 0.4f;
 
         /*Tính toán vị trí viên đạn ở ngoài cùng. Trong đó:
@@ -67,6 +68,7 @@ public class PLayer : MonoBehaviour
 
     private void Killed()
     {
+        SoundManager.Instance.PlayerDeathSfx();
         GameObject explode = Instantiate(explodePrefabs, transform.position, Quaternion.identity);
         Destroy(explode, 1.0f);
 
