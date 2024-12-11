@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip playerDeath;
     public AudioClip beginning;
     public AudioClip playing;
+
+    public Slider sfxSlider;
+    public Slider backgroundSlider;
     private void Awake()
     {
         if(Instance == null)
@@ -26,6 +30,18 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void SettingSfxSound()
+    {
+        float value = sfxSlider.value;
+        sfxSound.volume = value;
+    }
+
+    public void SettingBackgroundSound()
+    {
+        float value = backgroundSlider.value;
+        backgroundSound.volume = value;
     }
 
     public void ClickButton()

@@ -770,7 +770,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1816818060}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: SettingBackgroundSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &782727174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,7 +1575,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1816818060}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: SettingSfxSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1310948393
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,6 +2028,8 @@ MonoBehaviour:
   playerDeath: {fileID: 8300000, guid: 53fd787857e411a469fe72f92fb17123, type: 3}
   beginning: {fileID: 8300000, guid: e19c86337fd2da04286705886adc0a16, type: 3}
   playing: {fileID: 8300000, guid: b18fbc116941b984db624e2d8ebf0371, type: 3}
+  sfxSlider: {fileID: 1301473052}
+  backgroundSlider: {fileID: 641559115}
 --- !u!4 &1816818061
 Transform:
   m_ObjectHideFlags: 0

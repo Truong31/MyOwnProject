@@ -9,11 +9,13 @@ public class MainMenu : MonoBehaviour
     {
         SoundManager.Instance.BeginningSound();
     }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
         SoundManager.Instance.PlayingSound();
     }
+
     public void ExitGame()
     {
         Application.Quit();

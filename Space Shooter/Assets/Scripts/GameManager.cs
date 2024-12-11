@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,19 +24,19 @@ public class GameManager : MonoBehaviour
      *     - Cach di chuyen de Enemy khong vuot ra ngoai man hinh (Done)
      *     
      *     
-     *     - Them cac Wave khac:
+     *     - Them cac Wave khac: (Done)
      *          + Cac enemy xuat hien thanh hinh chu nhat (Done)
      *          + Cac enemy xuat hien thanh hinh tron (Done)
      *          + Cac enemy xuat hien thanh hang (Done)
      *          + Cac enemy xuat hien thanh hang, di theo duong cheo, doi huong moi khi va vao thanh(Done)
      *          + Cac khoi thien thach roi (Keo dai khoang 10s) tu goc tren ben trai, roi cheo. (Done)
-     *              Chung co 3 kich thuoc tuong ung so vien dan co the chiu(To nhat chiu duoc 3 vien va giam dan)
+     *              Chung co 3 kich thuoc tuong ung so vien dan co the chiu(To nhat chiu duoc 3 vien va giam dan) (Done)
      *          + Het 4 Wave se xuat hien 1 MiniBoss(Di chuyen lung tung, tha ra cac vien dan co the toa ra thanh nhieu vien khac) (Done)
      *          + Cach chuyen doi giua cac Wave, cac Wave se co thu tu 1, 2, 3 ... (Done)
-     *          + Se co tong cong 4 dot, moi dot gom 4 Wave thuong va 1 Wave MiniBoss
+     *          + Se co tong cong 4 dot, moi dot gom 4 Wave thuong va 1 Wave MiniBoss 
      *          + Dot cuoi sau khi vuot qua 4 Wave se suat hien Boss chinh
      *          
-     *      - Viet them ve Boss chinh:
+     *      - Viet them ve Boss chinh: (Done)
      *          + Viet lai Healthbar (Done)
      *          + Co 100 mau (co the thay doi them de phu hop)
      *          + Ban dau se tha ra cac vien dan giong MiniBoss (Done)
@@ -43,14 +44,16 @@ public class GameManager : MonoBehaviour
      *          + Khi con 30 mau se tha ra cac qua min co kha nang phat no dien rong sau 1 khoang thoi gian.
      *          O trong pham vi vu no se chet (90%. Sửa lại khi bắn trúng, bomb không bị hất lên)
      *          
-     *      - Them man hinh bat dau tro choi. Bao gom:
+     *      - Them man hinh bat dau tro choi. Bao gom: (Done)
      *          + 1 nut bat dau(Giua man hinh) (Done)
      *          + 1 nut Option(Dieu chinh am luong, tat tieng) (Done)
      *          
      *      - Them man hinh Pause. Bao gom 3 nut:
-     *          + 1 nut New Game
-     *          + 1 nut Continue
+     *          + 1 nut Main Menu
+     *          + 1 nut Continue (Done)
      *          + 1 nut Option (Giong man hinh bat dau)
+     *          + TODO: Sửa lại GameManager(Di chuyen PausePanel va PlayerPosition sang script khac)
+     *      - Tham khao tren Youtube ve chuyen Scene
      *          
      *      - Them Sound, Text
      *          
@@ -70,6 +73,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        NewGame();
+    }
+
     private void Update()
     {
         PauseGame();
@@ -79,7 +87,13 @@ public class GameManager : MonoBehaviour
     {
         live = 3;
         score = 0;
+        Time.timeScale = 1;
+    }
 
+    public void MainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
     private void PauseGame()
@@ -94,6 +108,7 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        pausePanel.SetActive(false);
         Time.timeScale = 1;
     }
 
