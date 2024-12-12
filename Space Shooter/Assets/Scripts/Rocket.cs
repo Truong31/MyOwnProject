@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    private Transform player;
+    private Transform playerPosition;
     private new Rigidbody2D rigidbody2D;
     public GameObject explosionPrefabs;
 
@@ -24,6 +24,16 @@ public class Rocket : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManager.Instance.isBossLive)
+        {
+            Destroy(gameObject);
+        }
+
+        if(FindObjectOfType<PLayer>() != null)
+        {
+            playerPosition = FindObjectOfType<PLayer>().transform;
+        }
+
         transform.position += moveDirection * speed * Time.deltaTime;
 
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
@@ -44,11 +54,11 @@ public class Rocket : MonoBehaviour
     //Rocket phong theo huong den Player sau 5s
     private IEnumerator Projectile()
     {
-        player = GameManager.Instance.playerPosition;
+        //player = GameManager.Instance.playerPosition;
 
         moveDirection = Vector3.zero;
 
-        Vector3 direction = (player.position - transform.position).normalized;
+        Vector3 direction = (playerPosition.position - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
@@ -64,6 +74,7 @@ public class Rocket : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player Bullet"))
         {
+            SoundManager.Instance.EnemyDeathSfx();
             Destroy(gameObject);
             GameObject explosion = Instantiate(explosionPrefabs, transform.position, Quaternion.identity);
             Destroy(explosion, 1.0f);

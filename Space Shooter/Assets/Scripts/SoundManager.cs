@@ -7,21 +7,25 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set;}
 
+    [Header("Audio Source")]
     public AudioSource sfxSound;
-    public AudioSource backgroundSound;
+    public AudioSource musicSound;
 
+    [Space]
+    [Header("Audio Clip")]
     public AudioClip click;
     public AudioClip shoot;
     public AudioClip enemyDeath;
     public AudioClip playerDeath;
     public AudioClip beginning;
     public AudioClip playing;
+    public AudioClip powerUp;
+    public AudioClip bomb;
+    public AudioClip bossDeath;
 
-    public Slider sfxSlider;
-    public Slider backgroundSlider;
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -32,18 +36,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void SettingSfxSound()
-    {
-        float value = sfxSlider.value;
-        sfxSound.volume = value;
-    }
-
-    public void SettingBackgroundSound()
-    {
-        float value = backgroundSlider.value;
-        backgroundSound.volume = value;
-    }
-
     public void ClickButton()
     {
         sfxSound.clip = click;
@@ -51,14 +43,14 @@ public class SoundManager : MonoBehaviour
     }
     public void BeginningSound()
     {
-        backgroundSound.clip = beginning;
-        backgroundSound.Play();
+        musicSound.clip = beginning;
+        musicSound.Play();
     }
 
     public void PlayingSound()
     {
-        backgroundSound.clip = playing;
-        backgroundSound.Play();
+        musicSound.clip = playing;
+        musicSound.Play();
     }
     public void ShootSfx()
     {
@@ -76,5 +68,21 @@ public class SoundManager : MonoBehaviour
         sfxSound.Play();
     }
 
+    public void PowerUpSfx()
+    {
+        sfxSound.clip = powerUp;
+        sfxSound.Play();
+    }
 
+    public void BombSfx()
+    {
+        sfxSound.clip = bomb;
+        sfxSound.Play();
+    }
+
+    public void BossDeathSfx()
+    {
+        sfxSound.clip = bossDeath;
+        sfxSound.Play();
+    }
 }

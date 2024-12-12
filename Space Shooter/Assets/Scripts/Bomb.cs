@@ -15,7 +15,15 @@ public class Bomb : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(BombBehaviour), 5f);
+        Invoke(nameof(BombBehaviour), Random.Range(1.5f, 2f));
+    }
+
+    private void Update()
+    {
+        if (!GameManager.Instance.isBossLive)
+        {
+            Destroy(gameObject);
+        }
     }
 
     //Xu ly hanh vi cho Bomb: sau 1 khoang thoi gian se phat no
@@ -25,6 +33,7 @@ public class Bomb : MonoBehaviour
         {
             rigidbody2D.isKinematic = true;
             GameObject bombExplode = Instantiate(bombExplosion, transform.position, Quaternion.identity);
+            SoundManager.Instance.BombSfx();
             Destroy(bombExplode, 1.5f);
             Destroy(gameObject);
         }
@@ -34,6 +43,7 @@ public class Bomb : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player Bullet"))
         {
+            SoundManager.Instance.EnemyDeathSfx();
             maxHit--;
             if(maxHit <= 0)
             {

@@ -204,9 +204,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 490936590}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1245041436}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1245041437}
+        m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -288,7 +300,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: 281, y: 20}
+  m_SizeDelta: {x: 470, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &44680960
 GameObject:
@@ -366,7 +378,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2.324829, y: 1.0960083}
-  m_SizeDelta: {x: 396, y: 265}
+  m_SizeDelta: {x: 600, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &289708633
 GameObject:
@@ -484,10 +496,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 513934084}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 12, y: 0}
-  m_SizeDelta: {x: 60, y: 36}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 13.300018, y: -0.000002861023}
+  m_SizeDelta: {x: 90, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &326703868
 MonoBehaviour:
@@ -569,11 +581,15 @@ PrefabInstance:
     - target: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
       propertyPath: healthBar
       value: 
+      objectReference: {fileID: 2023594661}
+    - target: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+      propertyPath: maxHealth
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
       propertyPath: enemyBullet
       value: 
-      objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+      objectReference: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
     - target: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
       propertyPath: bossExplosion
       value: 
@@ -668,8 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ffc0c5b866fa9a439b786642dd95261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 1575429304}
-  pausePanel: {fileID: 1517985654}
+  isBossLive: 0
 --- !u!4 &490936591
 Transform:
   m_ObjectHideFlags: 0
@@ -719,7 +734,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: 281, y: 20}
+  m_SizeDelta: {x: 470, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &519420028
 GameObject:
@@ -849,8 +864,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: 18}
-  m_SizeDelta: {x: 302, y: 35}
+  m_AnchoredPosition: {x: 13, y: 18}
+  m_SizeDelta: {x: 500, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &569908239
 MonoBehaviour:
@@ -899,13 +914,13 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.762
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: SettingSfxSound
+      - m_Target: {fileID: 1245041437}
+        m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+        m_MethodName: SfxSetting
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -996,7 +1011,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 616183517}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 162376149}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1245041437}
+        m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &616183517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,38 +1105,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - pattern: 1
-    enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
     planet:
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-    bigBoss: {fileID: 760569084}
-    enemyCount: 40
-    spawnPosition: {fileID: 1682834737}
-    movementType: 0
-  - pattern: 6
-    enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
-    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    planet:
-    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
-    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
-    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
-    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
-    boss:
-    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-    bigBoss: {fileID: 760569084}
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 5
     enemyCount: 1
     spawnPosition: {fileID: 1682834737}
     movementType: 4
   enemyActive: []
   waveId: 1
   speed: 10
-  bulletPrefabs: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+  enemyBullet: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
 --- !u!4 &645033916
 Transform:
   m_ObjectHideFlags: 0
@@ -1157,10 +1184,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 17980546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 12, y: 0}
-  m_SizeDelta: {x: 60, y: 36}
+  m_AnchorMin: {x: 0.762, y: 0}
+  m_AnchorMax: {x: 0.762, y: 1}
+  m_AnchoredPosition: {x: 12, y: 7.5}
+  m_SizeDelta: {x: 90, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &649576853
 MonoBehaviour:
@@ -1284,6 +1311,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &707027467 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2911795136594515869, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
+  m_PrefabInstance: {fileID: 1527536404}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7ab6b3ed039e64e8132f5df5b1e382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &708730630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.016688744, y: 0}
   m_AnchorMax: {x: 0.95000005, y: 1}
-  m_AnchoredPosition: {x: -0.000045776367, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &751703250
@@ -1350,15 +1388,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxSound: {fileID: 1091108784}
-  backgroundSound: {fileID: 2113853879}
+  musicSound: {fileID: 2113853879}
   click: {fileID: 8300000, guid: 771fa6038e20b694ba5ee72d9385a336, type: 3}
   shoot: {fileID: 8300000, guid: 476c70f9a2d4a414f9519e82bae37a64, type: 3}
   enemyDeath: {fileID: 8300000, guid: 8121996669809a944a7b6f4d6e41c63e, type: 3}
   playerDeath: {fileID: 8300000, guid: 53fd787857e411a469fe72f92fb17123, type: 3}
   beginning: {fileID: 8300000, guid: e19c86337fd2da04286705886adc0a16, type: 3}
   playing: {fileID: 8300000, guid: b18fbc116941b984db624e2d8ebf0371, type: 3}
-  sfxSlider: {fileID: 569908239}
-  backgroundSlider: {fileID: 895040795}
+  powerUp: {fileID: 8300000, guid: 8f0f37f8c19677646bf094151b8d16e4, type: 3}
+  bomb: {fileID: 8300000, guid: 3c18062360d25864aa4b54f6f5de05c7, type: 3}
+  bossDeath: {fileID: 8300000, guid: c52b879abda60b646925c44f9612d3d0, type: 3}
 --- !u!4 &751703252
 Transform:
   m_ObjectHideFlags: 0
@@ -1469,7 +1508,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.00001502}
-  m_SizeDelta: {x: 302, y: 35}
+  m_SizeDelta: {x: 500, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &849197197
 MonoBehaviour:
@@ -1678,9 +1717,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 490936590}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1245041436}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ResumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1245041437}
+        m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1764,8 +1815,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: -59}
-  m_SizeDelta: {x: 302, y: 35}
+  m_AnchoredPosition: {x: 13, y: -80}
+  m_SizeDelta: {x: 500, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &895040795
 MonoBehaviour:
@@ -1814,13 +1865,13 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: SettingBackgroundSound
+      - m_Target: {fileID: 1245041437}
+        m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+        m_MethodName: MusicSetting
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1868,7 +1919,7 @@ RectTransform:
   m_Father: {fileID: 1620636496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1943,10 +1994,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 162376150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 191, y: 126}
-  m_SizeDelta: {x: 60, y: 64}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -10}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &928147257
 MonoBehaviour:
@@ -1992,7 +2043,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 162376149}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2002,7 +2053,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 162376149}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -2016,9 +2067,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: ClickButton
+      - m_Target: {fileID: 1245041437}
+        m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2101,7 +2152,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.00001502}
-  m_SizeDelta: {x: 302, y: 35}
+  m_SizeDelta: {x: 500, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &997038958
 MonoBehaviour:
@@ -2173,6 +2224,17 @@ Transform:
   - {fileID: 760569083}
   m_Father: {fileID: 44680961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1053562987 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4700931430148839849, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+  m_PrefabInstance: {fileID: 2035189393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7ab6b3ed039e64e8132f5df5b1e382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1091108783
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,6 +2368,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
   m_PrefabInstance: {fileID: 425018887}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1228456075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+  m_PrefabInstance: {fileID: 425018887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f7e30a03b305e46917b86b7c4234c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1245041431
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,6 +2391,8 @@ GameObject:
   - component: {fileID: 1245041434}
   - component: {fileID: 1245041433}
   - component: {fileID: 1245041432}
+  - component: {fileID: 1245041436}
+  - component: {fileID: 1245041437}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2409,6 +2484,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1245041436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245041431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6a4af889624b848b98934a4e7df27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1517985654}
+--- !u!114 &1245041437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245041431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf3d06b4b24b224ab1d29d0b544ffd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxSlider: {fileID: 569908239}
+  musicSlider: {fileID: 895040795}
 --- !u!1 &1306751729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,7 +2661,7 @@ RectTransform:
   m_Father: {fileID: 708730631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.762, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2611,7 +2713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1517985655}
   m_Layer: 5
-  m_Name: Pause Panel
+  m_Name: Pause Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2652,11 +2754,11 @@ PrefabInstance:
     - target: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 707027467}
     - target: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
       propertyPath: enemyBullet
       value: 
-      objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+      objectReference: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
     - target: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
       propertyPath: bossExplosion
       value: 
@@ -2722,11 +2824,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
+--- !u!114 &1572777227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
+  m_PrefabInstance: {fileID: 1527536404}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f7e30a03b305e46917b86b7c4234c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1575429304 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5428257238879439495, guid: 698f62867f189b745b7b9a9873ece079, type: 3}
   m_PrefabInstance: {fileID: 1783568933}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1610173353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+  m_PrefabInstance: {fileID: 2035189393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f7e30a03b305e46917b86b7c4234c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620636495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,7 +2884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.016688744, y: 0}
   m_AnchorMax: {x: 0.95000005, y: 1}
-  m_AnchoredPosition: {x: -0.000045776367, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1682834736
@@ -2829,7 +2953,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 396, y: 265}
+  m_SizeDelta: {x: 600, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1758775480
 MonoBehaviour:
@@ -3092,8 +3216,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 93}
-  m_SizeDelta: {x: 256, y: 64}
+  m_AnchoredPosition: {x: 0, y: 120}
+  m_SizeDelta: {x: 384, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1867301817
 MonoBehaviour:
@@ -3133,6 +3257,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867301815}
   m_CullTransparentMesh: 1
+--- !u!114 &2023594661 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2766151468478663400, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+  m_PrefabInstance: {fileID: 425018887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7ab6b3ed039e64e8132f5df5b1e382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2035189393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3144,11 +3279,11 @@ PrefabInstance:
     - target: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1053562987}
     - target: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
       propertyPath: enemyBullet
       value: 
-      objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+      objectReference: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
     - target: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
       propertyPath: bossExplosion
       value: 
@@ -3252,7 +3387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
       propertyPath: bombPrefabs
@@ -3261,7 +3396,7 @@ PrefabInstance:
     - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
       propertyPath: enemyBullet
       value: 
-      objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+      objectReference: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
     - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
       propertyPath: bossExplosion
       value: 
@@ -3546,9 +3681,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 490936590}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1245041436}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ResumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1245041437}
+        m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3602,6 +3749,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 490936591}
+  - {fileID: 751703252}
   - {fileID: 645033916}
   - {fileID: 1306751731}
   - {fileID: 1783568933}
@@ -3609,4 +3757,3 @@ SceneRoots:
   - {fileID: 1245041435}
   - {fileID: 1805985800}
   - {fileID: 1328132562}
-  - {fileID: 751703252}

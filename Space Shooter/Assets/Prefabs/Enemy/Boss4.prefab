@@ -520,8 +520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f7e30a03b305e46917b86b7c4234c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBullet: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
-  healthBar: {fileID: 6858634806153279823, guid: bdddb77797d8cb849b3c6aad9268b8e9, type: 3}
+  enemyBullet: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+  healthBar: {fileID: 5600207363879006095}
   bossExplosion: {fileID: 1634694064389597777, guid: 57f45c57e8813014d8b4f2d23710191d, type: 3}
   speed: 8
   maxHealth: 10
@@ -537,13 +537,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a9a3835c8ad334387398bea0556423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBullet: {fileID: 0}
-  healthBar: {fileID: 0}
-  bossExplosion: {fileID: 0}
+  enemyBullet: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+  healthBar: {fileID: 5600207363879006095}
+  bossExplosion: {fileID: 1634694064389597777, guid: 57f45c57e8813014d8b4f2d23710191d, type: 3}
   speed: 8
   maxHealth: 10
-  rocketPrefabs: {fileID: 0}
-  bombPrefabs: {fileID: 0}
+  rocketPrefabs: {fileID: -1612885814033494109, guid: 109f4ec8310fe7343b8558183c7d57e5, type: 3}
+  bombPrefabs: {fileID: 7998906955291650822, guid: 91f309662e1aeb444ae9f2677bae7498, type: 3}
 --- !u!1 &8820663621119257230
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public GameObject enemyBullet;
+    public System.Action killed;
+
+    public EnemyBullet enemyBullet;
     public HealthBar healthBar;
     public GameObject bossExplosion;
 
@@ -16,6 +18,8 @@ public class Boss : MonoBehaviour
 
     public virtual void Start()
     {
+        GameManager.Instance.isBossLive = true;
+
         healthBar.gameObject.SetActive(true);
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -60,13 +64,13 @@ public class Boss : MonoBehaviour
 
     private IEnumerator FireBullets()
     {
-        GameObject bullet = Instantiate(enemyBullet, transform.position, Quaternion.identity);
+        EnemyBullet bullet = Instantiate(enemyBullet, transform.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 5.0f;
 
         yield return new WaitForSeconds(Random.Range(1, 3));
 
         Vector3 rodiatingPosition = bullet.transform.position;
-        Destroy(bullet);
+        Destroy(bullet.gameObject);
 
         for (int i = 0; i < bulletCount; i++)
         {
@@ -85,10 +89,10 @@ public class Boss : MonoBehaviour
             Vector3 direction = (bulletPosition - rodiatingPosition).normalized;
 
             // Tao vien dan va thiet lap huong
-            GameObject bullets = Instantiate(enemyBullet, bulletPosition, Quaternion.identity);
+            EnemyBullet bullets = Instantiate(enemyBullet, bulletPosition, Quaternion.identity);
             bullets.GetComponent<Rigidbody2D>().velocity = direction * speed; // Toc do 5
 
-            Destroy(bullets, 6.0f);
+            Destroy(bullets.gameObject, 5.0f);
         }
     }
 
@@ -100,6 +104,10 @@ public class Boss : MonoBehaviour
             healthBar.SetHealth(currentHealth);
             if(currentHealth <= 0)
             {
+                GameManager.Instance.isBossLive = false;
+                SoundManager.Instance.BossDeathSfx();
+                killed.Invoke();
+
                 healthBar.gameObject.SetActive(false);
                 GameObject explosion = Instantiate(bossExplosion, transform.position, Quaternion.identity);
                 CancelInvoke();

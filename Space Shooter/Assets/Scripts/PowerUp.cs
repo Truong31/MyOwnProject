@@ -20,8 +20,10 @@ public class PowerUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player")
+            || collision.gameObject.layer == LayerMask.NameToLayer("Shield"))
         {
+            SoundManager.Instance.PowerUpSfx();
             Collect(collision.gameObject);
             Destroy(gameObject);
         }

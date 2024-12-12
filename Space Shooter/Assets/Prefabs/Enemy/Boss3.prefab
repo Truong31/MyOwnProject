@@ -426,9 +426,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f7e30a03b305e46917b86b7c4234c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBullet: {fileID: 0}
-  healthBar: {fileID: 0}
-  bossExplosion: {fileID: 0}
+  enemyBullet: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+  healthBar: {fileID: 2911795136594515869}
+  bossExplosion: {fileID: 1634694064389597777, guid: 57f45c57e8813014d8b4f2d23710191d, type: 3}
   speed: 8
   maxHealth: 10
 --- !u!1 &3113431461076439976

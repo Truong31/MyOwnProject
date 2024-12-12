@@ -4,31 +4,16 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    //public static WaveManager Instance { get; private set; }
-
     public List<WaveData> waves;
     public List<Enemy> enemyActive;
     public int waveId = 1;
 
     public float speed = 6f;
-    public GameObject bulletPrefabs;
+    public EnemyBullet enemyBullet;
 
     private int currentWaveIndex = 0;
     private int totalEnemies;
     private int enemiesKilled = 0;
-
-    //private void Awake()
-    //{
-    //    if(Instance == null)
-    //    {
-    //        Instance = this;
-    //        DontDestroyOnLoad(gameObject);
-    //    }
-    //    else
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
 
     private void Start()
     {
@@ -189,6 +174,7 @@ public class WaveManager : MonoBehaviour
 
         int random = Random.Range(0, wave.boss.Length);
         wave.boss[random].gameObject.SetActive(true);
+        wave.boss[random].killed += EnemyKilled;
 
     }
 
@@ -196,6 +182,7 @@ public class WaveManager : MonoBehaviour
     {
         totalEnemies = wave.enemyCount;
         wave.bigBoss.gameObject.SetActive(true);
+        wave.bigBoss.killed += EnemyKilled;
     }
 
     private void EnemyKilled()
@@ -219,7 +206,7 @@ public class WaveManager : MonoBehaviour
 
             if (Random.value < 0.1f)
             {
-                GameObject bullet = Instantiate(bulletPrefabs, enemy.position, Quaternion.identity);
+                EnemyBullet bullet = Instantiate(enemyBullet, enemy.position, Quaternion.identity);
                 bullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 8.0f;
                 Destroy(bullet, 6.0f);
                 break;

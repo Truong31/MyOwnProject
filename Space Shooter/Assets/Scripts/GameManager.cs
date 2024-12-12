@@ -7,10 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public Transform playerPosition;
-    public GameObject pausePanel;
     public int score { get; private set; }
     public int live { get; private set; }
+    public bool isBossLive;
 
 
     /*TODO:
@@ -52,10 +51,11 @@ public class GameManager : MonoBehaviour
      *          + 1 nut Main Menu
      *          + 1 nut Continue (Done)
      *          + 1 nut Option (Giong man hinh bat dau)
-     *          + TODO: Sửa lại GameManager(Di chuyen PausePanel va PlayerPosition sang script khac)
+     *          + TODO: Sửa lại GameManager(Di chuyen PausePanel va PlayerPosition sang script khac) (Done)
      *      - Tham khao tren Youtube ve chuyen Scene
      *          
      *      - Them Sound, Text
+     *      - Them panel game over (Game over thi quay ve Main Menu), ket thuc tro choi
      *          
      *
      */
@@ -78,37 +78,10 @@ public class GameManager : MonoBehaviour
         NewGame();
     }
 
-    private void Update()
-    {
-        PauseGame();
-    }
-
     public void NewGame()
     {
         live = 3;
         score = 0;
-        Time.timeScale = 1;
-    }
-
-    public void MainMenu()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(0);
-    }
-
-    private void PauseGame()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButton(1))
-        {
-            pausePanel.SetActive(true);
-            Time.timeScale = 0;
-        }
-        
-    }
-
-    public void ResumeGame()
-    {
-        pausePanel.SetActive(false);
         Time.timeScale = 1;
     }
 

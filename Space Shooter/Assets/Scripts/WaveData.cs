@@ -24,12 +24,15 @@ public enum Pattern
 [System.Serializable]
 public class WaveData 
 {
-    public Pattern pattern;
+    [Header("Enemy type")]
     public Enemy enemy;
     public Asteroid asteroid;
+    public BigBoss bigBoss;
     public Planet[] planet;
     public Boss[] boss;
-    public BigBoss bigBoss;
+
+    [Space]
+    public Pattern pattern;
     public int enemyCount;
     public Transform spawnPosition;
     public MovementType movementType;
