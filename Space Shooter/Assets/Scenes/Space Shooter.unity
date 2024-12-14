@@ -589,7 +589,7 @@ PrefabInstance:
     - target: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
       propertyPath: enemyBullet
       value: 
-      objectReference: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+      objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
     - target: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
       propertyPath: bossExplosion
       value: 
@@ -911,7 +911,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1458770229}
   m_HandleRect: {fileID: 649576852}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.762
@@ -1121,10 +1121,26 @@ MonoBehaviour:
     enemyCount: 1
     spawnPosition: {fileID: 1682834737}
     movementType: 4
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 2
+    enemyCount: 10
+    spawnPosition: {fileID: 1682834737}
+    movementType: 0
   enemyActive: []
   waveId: 1
   speed: 10
-  enemyBullet: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+  enemyBullet: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
 --- !u!4 &645033916
 Transform:
   m_ObjectHideFlags: 0
@@ -1387,6 +1403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24f4332cad0e0144878cec8771b58cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 83e4c3e94b470a44bae9de38a787db26, type: 2}
   sfxSound: {fileID: 1091108784}
   musicSound: {fileID: 2113853879}
   click: {fileID: 8300000, guid: 771fa6038e20b694ba5ee72d9385a336, type: 3}
@@ -1862,7 +1879,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 918857527}
   m_HandleRect: {fileID: 326703867}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -2261,7 +2278,7 @@ AudioSource:
   m_GameObject: {fileID: 1091108783}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2409693964981099655, guid: 83e4c3e94b470a44bae9de38a787db26, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2758,7 +2775,7 @@ PrefabInstance:
     - target: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
       propertyPath: enemyBullet
       value: 
-      objectReference: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+      objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
     - target: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
       propertyPath: bossExplosion
       value: 
@@ -3095,7 +3112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7696710746578582259, guid: 698f62867f189b745b7b9a9873ece079, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7696710746578582259, guid: 698f62867f189b745b7b9a9873ece079, type: 3}
       propertyPath: m_IsActive
@@ -3283,7 +3300,7 @@ PrefabInstance:
     - target: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
       propertyPath: enemyBullet
       value: 
-      objectReference: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+      objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
     - target: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
       propertyPath: bossExplosion
       value: 
@@ -3396,7 +3413,7 @@ PrefabInstance:
     - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
       propertyPath: enemyBullet
       value: 
-      objectReference: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+      objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
     - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
       propertyPath: bossExplosion
       value: 
@@ -3482,7 +3499,7 @@ GameObject:
   - component: {fileID: 2113853880}
   - component: {fileID: 2113853879}
   m_Layer: 0
-  m_Name: Background
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3497,7 +3514,7 @@ AudioSource:
   m_GameObject: {fileID: 2113853878}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3047160130873133831, guid: 83e4c3e94b470a44bae9de38a787db26, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.8

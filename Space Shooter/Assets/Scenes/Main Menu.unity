@@ -779,7 +779,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1183117216}
   m_HandleRect: {fileID: 908690816}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -1584,10 +1584,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2115253702}
   m_HandleRect: {fileID: 1193578759}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.755
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1776,7 +1776,7 @@ AudioSource:
   m_GameObject: {fileID: 1506114603}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2409693964981099655, guid: 83e4c3e94b470a44bae9de38a787db26, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1904,7 +1904,7 @@ AudioSource:
   m_GameObject: {fileID: 1556641843}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3047160130873133831, guid: 83e4c3e94b470a44bae9de38a787db26, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.8
@@ -2035,6 +2035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24f4332cad0e0144878cec8771b58cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 83e4c3e94b470a44bae9de38a787db26, type: 2}
   sfxSound: {fileID: 1506114604}
   musicSound: {fileID: 1556641844}
   click: {fileID: 8300000, guid: 771fa6038e20b694ba5ee72d9385a336, type: 3}
@@ -2043,6 +2044,9 @@ MonoBehaviour:
   playerDeath: {fileID: 8300000, guid: 53fd787857e411a469fe72f92fb17123, type: 3}
   beginning: {fileID: 8300000, guid: e19c86337fd2da04286705886adc0a16, type: 3}
   playing: {fileID: 8300000, guid: b18fbc116941b984db624e2d8ebf0371, type: 3}
+  powerUp: {fileID: 0}
+  bomb: {fileID: 0}
+  bossDeath: {fileID: 0}
 --- !u!4 &1816818061
 Transform:
   m_ObjectHideFlags: 0

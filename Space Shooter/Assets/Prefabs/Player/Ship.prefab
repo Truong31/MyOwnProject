@@ -375,6 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  bulletCount: 1
   bulletPrefabs: {fileID: -2078086955387484731, guid: a6d70eb551d556b45974bb89b0757e53, type: 3}
   shield: {fileID: 7696710746578582259}
   explodePrefabs: {fileID: 1028613995835532235, guid: 95964e691c1bca44a8c2aa783b976f2e, type: 3}
@@ -388,8 +389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7780996581544494531}
   - component: {fileID: 3633118835451421192}
-  - component: {fileID: 310065341523971054}
-  - component: {fileID: 2820946584864718707}
+  - component: {fileID: 7212706376573086731}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -464,8 +464,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &310065341523971054
-BoxCollider2D:
+--- !u!58 &7212706376573086731
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -497,27 +497,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &2820946584864718707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7696710746578582259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3426bd48405f3a74dabd9f613d61d5f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Radius: 0.5

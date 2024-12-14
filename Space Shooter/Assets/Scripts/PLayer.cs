@@ -69,6 +69,7 @@ public class PLayer : MonoBehaviour
     private void Killed()
     {
         SoundManager.Instance.PlayerDeathSfx();
+        GameManager.Instance.MinusLive(1);
         GameObject explode = Instantiate(explodePrefabs, transform.position, Quaternion.identity);
         Destroy(explode, 1.0f);
 

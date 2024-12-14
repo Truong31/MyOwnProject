@@ -11,13 +11,13 @@ public class SoundController : MonoBehaviour
     public void SfxSetting()
     {
         float value = sfxSlider.value;
-        SoundManager.Instance.musicSound.volume = value;
+        SoundManager.Instance.audioMixer.SetFloat("Sfx", Mathf.Log10(value) * 20);
     }
 
     public void MusicSetting()
     {
         float value = musicSlider.value;
-        SoundManager.Instance.sfxSound.volume = value;
+        SoundManager.Instance.audioMixer.SetFloat("Music", Mathf.Log10(value) * 20);
     }
 
     public void ButtonSound()

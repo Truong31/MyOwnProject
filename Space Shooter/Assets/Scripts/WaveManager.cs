@@ -9,7 +9,7 @@ public class WaveManager : MonoBehaviour
     public int waveId = 1;
 
     public float speed = 6f;
-    public EnemyBullet enemyBullet;
+    public GameObject enemyBullet;
 
     private int currentWaveIndex = 0;
     private int totalEnemies;
@@ -115,6 +115,7 @@ public class WaveManager : MonoBehaviour
             enemy.transform.SetParent(transform);
             enemy.killed += EnemyKilled;
         }
+
     }
 
     //Tao Wave dang Line
@@ -197,7 +198,7 @@ public class WaveManager : MonoBehaviour
 
     private void Attack()
     {
-        foreach(Transform enemy in transform)
+        foreach (Transform enemy in transform)
         {
             if (!enemy.gameObject.activeInHierarchy)
             {
@@ -206,7 +207,7 @@ public class WaveManager : MonoBehaviour
 
             if (Random.value < 0.1f)
             {
-                EnemyBullet bullet = Instantiate(enemyBullet, enemy.position, Quaternion.identity);
+                GameObject bullet = Instantiate(enemyBullet, enemy.position, Quaternion.identity);
                 bullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 8.0f;
                 Destroy(bullet, 6.0f);
                 break;

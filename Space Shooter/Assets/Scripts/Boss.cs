@@ -6,7 +6,7 @@ public class Boss : MonoBehaviour
 {
     public System.Action killed;
 
-    public EnemyBullet enemyBullet;
+    public GameObject enemyBullet;
     public HealthBar healthBar;
     public GameObject bossExplosion;
 
@@ -26,6 +26,16 @@ public class Boss : MonoBehaviour
 
         InvokeRepeating(nameof(Movement), 1.0f, 3.0f);
         InvokeRepeating(nameof(Attack), 3.0f, 3.0f);
+    }
+
+    //Tieu huy tat ca Enemy Bullet neu Boss chet
+    private void OnDestroy()
+    {
+        GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy Bullet");
+        for(int i = 0; i < enemy.Length; i++)
+        {
+            Destroy(enemy[i]);
+        }
     }
 
     private void Movement()
@@ -64,7 +74,7 @@ public class Boss : MonoBehaviour
 
     private IEnumerator FireBullets()
     {
-        EnemyBullet bullet = Instantiate(enemyBullet, transform.position, Quaternion.identity);
+        GameObject bullet = Instantiate(enemyBullet, transform.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 5.0f;
 
         yield return new WaitForSeconds(Random.Range(1, 3));
@@ -89,10 +99,11 @@ public class Boss : MonoBehaviour
             Vector3 direction = (bulletPosition - rodiatingPosition).normalized;
 
             // Tao vien dan va thiet lap huong
-            EnemyBullet bullets = Instantiate(enemyBullet, bulletPosition, Quaternion.identity);
+            GameObject bullets = Instantiate(enemyBullet, bulletPosition, Quaternion.identity);
             bullets.GetComponent<Rigidbody2D>().velocity = direction * speed; // Toc do 5
 
-            Destroy(bullets.gameObject, 5.0f);
+            Destroy(bullets, 5.0f);
+
         }
     }
 

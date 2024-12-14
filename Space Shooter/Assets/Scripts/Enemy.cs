@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
         {
             int randomPower = Random.Range(0, powerUpPrefabs.Length);
             PowerUp power = Instantiate(powerUpPrefabs[randomPower], enemy.position, Quaternion.identity);
-            Destroy(power, 5.0f);
+            Destroy(power.gameObject, 5.0f);
         }
     }
 

@@ -40,7 +40,7 @@ public class PowerUp : MonoBehaviour
                 player.GetComponent<PLayer>().bulletCount++;
                 break;
             case Type.ExtraLife:
-                GameManager.Instance.AddScore(1);
+                GameManager.Instance.AddLive(1);
                 break;
         }
     }

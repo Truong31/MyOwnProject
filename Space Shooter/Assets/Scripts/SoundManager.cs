@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set;}
+
+    [Header("Audio Mixer")]
+    public AudioMixer audioMixer;
 
     [Header("Audio Source")]
     public AudioSource sfxSound;
@@ -36,11 +40,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void ClickButton()
-    {
-        sfxSound.clip = click;
-        sfxSound.Play();
-    }
     public void BeginningSound()
     {
         musicSound.clip = beginning;
@@ -52,37 +51,38 @@ public class SoundManager : MonoBehaviour
         musicSound.clip = playing;
         musicSound.Play();
     }
+
+    public void ClickButton()
+    {
+        sfxSound.PlayOneShot(click);
+    }
+
     public void ShootSfx()
     {
-        sfxSound.clip = shoot;
-        sfxSound.Play();
+        sfxSound.PlayOneShot(shoot);
     }
     public void EnemyDeathSfx()
     {
-        sfxSound.clip = enemyDeath;
-        sfxSound.Play();
+        sfxSound.PlayOneShot(enemyDeath);
     }
     public void PlayerDeathSfx()
     {
-        sfxSound.clip = playerDeath;
-        sfxSound.Play();
+        sfxSound.PlayOneShot(playerDeath);
     }
 
     public void PowerUpSfx()
     {
-        sfxSound.clip = powerUp;
-        sfxSound.Play();
+        sfxSound.PlayOneShot(powerUp);
     }
 
     public void BombSfx()
     {
-        sfxSound.clip = bomb;
-        sfxSound.Play();
+        sfxSound.PlayOneShot(bomb);
     }
 
     public void BossDeathSfx()
     {
-        sfxSound.clip = bossDeath;
-        sfxSound.Play();
+        sfxSound.PlayOneShot(bossDeath);
     }
+
 }
