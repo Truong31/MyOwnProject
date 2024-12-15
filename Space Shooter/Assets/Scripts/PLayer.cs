@@ -11,23 +11,35 @@ public class PLayer : MonoBehaviour
     public GameObject shield;
     public GameObject explodePrefabs;
 
+    private void Start()
+    {
+        gameObject.SetActive(true);
+    }
+
     void Update()
     {
-        if (isInScreen())
+        if (GameManager.Instance.isGameOver)
         {
-            // Lấy vị trí của con trỏ chuột và chuyển đổi sang tọa độ thế giới
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            // Đặt z của máy bay là 0 để tránh di chuyển ra ngoài trục z
-            mousePosition.z = 0f;
-
-            // Di chuyển máy bay về phía vị trí chuột với tốc độ đã định
-            transform.position = Vector3.Lerp(transform.position, mousePosition, speed * Time.deltaTime);
+            gameObject.SetActive(false);
         }
-
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        else
         {
-            Shoot();
+            if (isInScreen())
+            {
+                // Lấy vị trí của con trỏ chuột và chuyển đổi sang tọa độ thế giới
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+                // Đặt z của máy bay là 0 để tránh di chuyển ra ngoài trục z
+                mousePosition.z = 0f;
+
+                // Di chuyển máy bay về phía vị trí chuột với tốc độ đã định
+                transform.position = Vector3.Lerp(transform.position, mousePosition, speed * Time.deltaTime);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            {
+                Shoot();
+            }
         }
     }
 

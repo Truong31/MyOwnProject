@@ -10,13 +10,12 @@ public class GameManager : MonoBehaviour
     public int score { get; private set; }
     public int live { get; private set; }
     public bool isBossLive;
-
+    public bool isGameOver;
 
     /*TODO:        
-     *      - Them Text
      *      - Hien thi so thu tu cua Wave khi bat dau wave
-     *      - Them panel game over (Game over thi quay ve Main Menu), ket thuc tro choi
-     *          
+     *      - Sua lai thoi gian chuyen giua Wave boss va wave thuong
+     *      - Them panel Winner (Sau khi vuot qua het tat ca cac Wave)
      *
      */
 
@@ -33,9 +32,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
+    }
+
     private void Start()
     {
         NewGame();
+    }
+
+    private void Update()
+    {
+        GameOver();
     }
 
     public void NewGame()
@@ -43,12 +53,22 @@ public class GameManager : MonoBehaviour
         live = 3;
         score = 0;
         Time.timeScale = 1;
+        isGameOver = false;
     }
 
-    private void OnDestroy()
+    private void GameOver()
     {
-        if (Instance == this)
-            Instance = null;
+        StartCoroutine(gameOver());
+    }
+
+    private IEnumerator gameOver()
+    {
+        if (live == 0)
+        {
+            isGameOver = true;
+            yield return new WaitForSeconds(3f);
+            NewGame();
+        }
     }
 
     public void AddScore(int enemyScore)
