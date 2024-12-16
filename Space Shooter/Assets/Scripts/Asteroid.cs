@@ -12,7 +12,7 @@ public class Asteroid : MonoBehaviour
     private Vector3 direction;
 
     private int maxHit;
-    public float speed = 40;
+    public float speed = 80;
 
     private int size;
     public int maxSize = 4;
@@ -29,7 +29,7 @@ public class Asteroid : MonoBehaviour
 
         size = Random.Range(minSize, maxSize);
         rigidbody.mass = size;
-        maxHit = size*2;
+        maxHit = size;
         transform.localScale = Vector3.one * size;
 
         Attack();
@@ -38,7 +38,7 @@ public class Asteroid : MonoBehaviour
     private void Update()
     {
         Vector3 position = Camera.main.WorldToViewportPoint(transform.position);
-        if(position.x > 1.5f || position.x < -0.5f || position.y > 1.5f || position.y < -0.5f)
+        if(position.x > 1.01f || position.x < -0.01f || position.y < -0.01f)
         {
             killed.Invoke();
             Destroy(gameObject);
@@ -60,8 +60,22 @@ public class Asteroid : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player Bullet") )
         {
             maxHit--;
-            if(maxHit == 0)
+            if (maxHit == 0)
             {
+                if (size == 2)
+                {
+                    GameManager.Instance.AddScore(20);
+                }
+                else if (size == 3)
+                {
+                    GameManager.Instance.AddScore(30);
+                }
+                else if(size == 4)
+                {
+                    GameManager.Instance.AddScore(40);
+                }
+                
+                SoundManager.Instance.EnemyDeathSfx();
                 GameObject explosion = Instantiate(explosionPrefabs, transform.position, Quaternion.identity);
                 killed.Invoke();
                 Destroy(gameObject);

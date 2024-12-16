@@ -162,6 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefabs: {fileID: 2685256629426251832, guid: ac886b1500ebbd048aad0ee16d9eacd5, type: 3}
-  speed: 40
+  speed: 60
   maxSize: 4
   minSize: 2

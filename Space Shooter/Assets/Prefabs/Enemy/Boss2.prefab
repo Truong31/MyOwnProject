@@ -480,7 +480,7 @@ MonoBehaviour:
   healthBar: {fileID: 4700931430148839849}
   bossExplosion: {fileID: 1634694064389597777, guid: 57f45c57e8813014d8b4f2d23710191d, type: 3}
   speed: 8
-  maxHealth: 10
+  maxHealth: 50
 --- !u!1 &4377026386117087450
 GameObject:
   m_ObjectHideFlags: 0

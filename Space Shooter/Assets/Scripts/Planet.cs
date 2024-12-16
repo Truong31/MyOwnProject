@@ -60,6 +60,19 @@ public class Planet : MonoBehaviour
             maxHit--;
             if (maxHit == 0)
             {
+                if (size == 3)
+                {
+                    GameManager.Instance.AddScore(30);
+                }
+                else if (size == 4)
+                {
+                    GameManager.Instance.AddScore(40);
+                }
+                else if (size == 5)
+                {
+                    GameManager.Instance.AddScore(50);
+                }
+
                 GameObject explosion = Instantiate(explosionPrefabs, transform.position, Quaternion.identity);
                 killed.Invoke();
                 Destroy(gameObject);

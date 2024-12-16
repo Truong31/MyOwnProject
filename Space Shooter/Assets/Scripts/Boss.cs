@@ -116,6 +116,16 @@ public class Boss : MonoBehaviour
             if(currentHealth <= 0)
             {
                 GameManager.Instance.isBossLive = false;
+                if (GameManager.Instance.isBigBoss)
+                {
+                    GameManager.Instance.AddScore(100);
+                    GameManager.Instance.isBigBoss = false;
+                }
+                else
+                {
+                    GameManager.Instance.AddScore(50);
+                }
+
                 SoundManager.Instance.BossDeathSfx();
                 killed.Invoke();
 

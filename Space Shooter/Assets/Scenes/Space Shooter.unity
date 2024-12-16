@@ -365,16 +365,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99990684}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1245041435}
+  m_Father: {fileID: 1287223696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -21, y: -20}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -20, y: 0}
   m_SizeDelta: {x: 50, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &99990686
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -600,6 +600,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &302734783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 302734784}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &302734784
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302734783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 517096634}
+  - {fileID: 1916527228}
+  m_Father: {fileID: 1245041435}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.17600001, y: 0.9626788}
+  m_AnchorMax: {x: 0.17600001, y: 0.9626788}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 163.394, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &326703866
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,12 +737,146 @@ Transform:
   m_GameObject: {fileID: 338454259}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 13, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328132562}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &423619768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 423619769}
+  - component: {fileID: 423619771}
+  - component: {fileID: 423619770}
+  m_Layer: 5
+  m_Name: Winner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &423619769
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423619768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1245041435}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 280, y: 170}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &423619770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423619768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Winner Wineer Chicken!!!
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 646c557827f53a2418701c3c71012a33, type: 2}
+  m_sharedMaterial: {fileID: 3475232147884765094, guid: 646c557827f53a2418701c3c71012a33, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 40
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &423619771
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423619768}
+  m_CullTransparentMesh: 1
 --- !u!1001 &425018887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -720,7 +891,7 @@ PrefabInstance:
       objectReference: {fileID: 2023594661}
     - target: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
       propertyPath: maxHealth
-      value: 1
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
       propertyPath: enemyBullet
@@ -821,6 +992,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBossLive: 0
+  isBigBoss: 0
+  isGameOver: 0
 --- !u!4 &490936591
 Transform:
   m_ObjectHideFlags: 0
@@ -884,7 +1057,7 @@ GameObject:
   - component: {fileID: 517096636}
   - component: {fileID: 517096635}
   m_Layer: 5
-  m_Name: Score
+  m_Name: Scores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -897,17 +1070,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517096633}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1245041435}
+  m_Father: {fileID: 302734784}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116, y: -25}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0.5724159, y: 0.5}
+  m_AnchorMax: {x: 0.5724159, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 138.1767, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517096635
 MonoBehaviour:
@@ -966,7 +1139,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1100,6 +1273,140 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &522378795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522378796}
+  - component: {fileID: 522378798}
+  - component: {fileID: 522378797}
+  m_Layer: 5
+  m_Name: WaveID
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &522378796
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522378795}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1245041435}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.58439475}
+  m_AnchorMax: {x: 0.5, y: 0.58439475}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 220, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &522378797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522378795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Wave 1
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 646c557827f53a2418701c3c71012a33, type: 2}
+  m_sharedMaterial: {fileID: 3475232147884765094, guid: 646c557827f53a2418701c3c71012a33, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 30
+  m_fontSizeBase: 30
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 16
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &522378798
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522378795}
+  m_CullTransparentMesh: 1
 --- !u!1 &569908237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,25 +1688,9 @@ MonoBehaviour:
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
     bigBoss: {fileID: 760569084}
     planet:
-    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
-    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
-    boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
-    pattern: 5
-    enemyCount: 1
-    spawnPosition: {fileID: 1682834737}
-    movementType: 4
-  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
-    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
-    planet:
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
-    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
-    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
     - {fileID: 1228456075}
@@ -1409,10 +1700,490 @@ MonoBehaviour:
     enemyCount: 10
     spawnPosition: {fileID: 1682834737}
     movementType: 0
-  enemyActive: []
-  waveId: 1
-  speed: 10
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 1
+    enemyCount: 20
+    spawnPosition: {fileID: 2057632114}
+    movementType: 0
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 0
+    enemyCount: 25
+    spawnPosition: {fileID: 338454260}
+    movementType: 0
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 1
+    enemyCount: 40
+    spawnPosition: {fileID: 1682834737}
+    movementType: 0
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 2
+    enemyCount: 13
+    spawnPosition: {fileID: 1303596482}
+    movementType: 2
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 5
+    enemyCount: 1
+    spawnPosition: {fileID: 1682834737}
+    movementType: 3
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 1
+    enemyCount: 40
+    spawnPosition: {fileID: 1682834737}
+    movementType: 0
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 2
+    enemyCount: 15
+    spawnPosition: {fileID: 1303596482}
+    movementType: 2
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 1
+    enemyCount: 20
+    spawnPosition: {fileID: 1303596482}
+    movementType: 2
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 3
+    enemyCount: 20
+    spawnPosition: {fileID: 1303596482}
+    movementType: 3
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 0
+    enemyCount: 25
+    spawnPosition: {fileID: 1682834737}
+    movementType: 0
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 5
+    enemyCount: 1
+    spawnPosition: {fileID: 1682834737}
+    movementType: 3
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 1
+    enemyCount: 40
+    spawnPosition: {fileID: 1682834737}
+    movementType: 0
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 3
+    enemyCount: 25
+    spawnPosition: {fileID: 1303596482}
+    movementType: 3
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 0
+    enemyCount: 20
+    spawnPosition: {fileID: 1682834737}
+    movementType: 0
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 4
+    enemyCount: 15
+    spawnPosition: {fileID: 338454260}
+    movementType: 1
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 1
+    enemyCount: 30
+    spawnPosition: {fileID: 1303596482}
+    movementType: 2
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 5
+    enemyCount: 1
+    spawnPosition: {fileID: 1303596482}
+    movementType: 3
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 1
+    enemyCount: 40
+    spawnPosition: {fileID: 2057632114}
+    movementType: 0
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 0
+    enemyCount: 30
+    spawnPosition: {fileID: 2057632114}
+    movementType: 0
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 1
+    enemyCount: 20
+    spawnPosition: {fileID: 338454260}
+    movementType: 1
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 0
+    enemyCount: 20
+    spawnPosition: {fileID: 338454260}
+    movementType: 1
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 3
+    enemyCount: 20
+    spawnPosition: {fileID: 338454260}
+    movementType: 1
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 5
+    enemyCount: 1
+    spawnPosition: {fileID: 338454260}
+    movementType: 3
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 1
+    enemyCount: 50
+    spawnPosition: {fileID: 2057632114}
+    movementType: 0
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 3
+    enemyCount: 20
+    spawnPosition: {fileID: 1303596482}
+    movementType: 3
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 2
+    enemyCount: 13
+    spawnPosition: {fileID: 338454260}
+    movementType: 1
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 3
+    enemyCount: 20
+    spawnPosition: {fileID: 1303596482}
+    movementType: 3
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 4
+    enemyCount: 15
+    spawnPosition: {fileID: 338454260}
+    movementType: 3
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 3
+    enemyCount: 15
+    spawnPosition: {fileID: 338454260}
+    movementType: 1
+  - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
+    asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
+    bigBoss: {fileID: 760569084}
+    planet:
+    - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
+    - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
+    - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
+    - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
+    boss:
+    - {fileID: 1228456075}
+    - {fileID: 1610173353}
+    - {fileID: 1572777227}
+    pattern: 6
+    enemyCount: 1
+    spawnPosition: {fileID: 1303596482}
+    movementType: 3
   enemyBullet: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+  speed: 10
+  waveInfo: {fileID: 522378797}
+  winner: {fileID: 423619770}
 --- !u!4 &645033916
 Transform:
   m_ObjectHideFlags: 0
@@ -1514,6 +2285,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649576851}
+  m_CullTransparentMesh: 1
+--- !u!1 &670652450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 670652451}
+  - component: {fileID: 670652453}
+  - component: {fileID: 670652452}
+  m_Layer: 5
+  m_Name: Live Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &670652451
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670652450}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1287223696}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5000002, y: 0.49999994}
+--- !u!114 &670652452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670652450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.70980394, g: 0.7137255, b: 0.70980394, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 80b008e5d1f4b714393bb8a496c68322, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &670652453
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670652450}
   m_CullTransparentMesh: 1
 --- !u!1 &706211823
 GameObject:
@@ -2766,9 +3612,11 @@ RectTransform:
   m_Children:
   - {fileID: 1517985655}
   - {fileID: 162376150}
-  - {fileID: 517096634}
-  - {fileID: 99990685}
   - {fileID: 1927203498}
+  - {fileID: 1287223696}
+  - {fileID: 302734784}
+  - {fileID: 522378796}
+  - {fileID: 423619769}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2806,6 +3654,74 @@ MonoBehaviour:
   liveText: {fileID: 99990686}
   gameoverText: {fileID: 1927203496}
   pauseMenu: {fileID: 1517985654}
+--- !u!1 &1287223695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1287223696}
+  m_Layer: 5
+  m_Name: Live
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1287223696
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287223695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 99990685}
+  - {fileID: 670652451}
+  m_Father: {fileID: 1245041435}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.91662043, y: 0.9626788}
+  m_AnchorMax: {x: 0.91662043, y: 0.9626788}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1303596481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1303596482}
+  m_Layer: 0
+  m_Name: Top
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1303596482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303596481}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8, y: 16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1328132562}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1306751729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,6 +3803,8 @@ Transform:
   - {fileID: 786865545}
   - {fileID: 1682834737}
   - {fileID: 338454260}
+  - {fileID: 2057632114}
+  - {fileID: 1303596482}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1428512812
@@ -3050,6 +3968,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 707027467}
+    - target: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
+      propertyPath: maxHealth
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
       propertyPath: enemyBullet
       value: 
@@ -3552,6 +4474,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867301815}
   m_CullTransparentMesh: 1
+--- !u!1 &1916527227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1916527228}
+  - component: {fileID: 1916527230}
+  - component: {fileID: 1916527229}
+  m_Layer: 5
+  m_Name: Score Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1916527228
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916527227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 302734784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1916527229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916527227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.70980394, g: 0.7137255, b: 0.70980394, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1107933142, guid: 17c4fb7e395095242b1e30b1e8968aad, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1916527230
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916527227}
+  m_CullTransparentMesh: 1
 --- !u!1 &1927203495
 GameObject:
   m_ObjectHideFlags: 0
@@ -3710,6 +4707,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1053562987}
     - target: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+      propertyPath: maxHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
       propertyPath: enemyBullet
       value: 
       objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
@@ -3778,6 +4779,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+--- !u!1 &2057632113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2057632114}
+  m_Layer: 0
+  m_Name: Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2057632114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057632113}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27, y: 9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1328132562}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2058980570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3816,7 +4848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
       propertyPath: maxHealth
-      value: 5
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
       propertyPath: bombPrefabs

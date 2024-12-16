@@ -1,39 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
     public List<WaveData> waves;
-    public List<Enemy> enemyActive;
-    public int waveId = 1;
-
-    public float speed = 6f;
     public GameObject enemyBullet;
 
-    private int currentWaveIndex = 0;
+    private int waveId = 0;
+    public float speed = 6f;
     private int totalEnemies;
     private int enemiesKilled = 0;
 
+    public TextMeshProUGUI waveInfo;
+    public TextMeshProUGUI winner;
+
     private void Start()
     {
+        winner.gameObject.SetActive(false);
         InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
         StartCoroutine(SpawnWaves());
     }
 
     private IEnumerator SpawnWaves()
     {
-        while(currentWaveIndex < waves.Count)
+        while(waveId < waves.Count)
         {
-            WaveData currentWave = waves[currentWaveIndex];
-            SpawnWave(currentWave);
+            waveInfo.text = "Wave " + (waveId + 1);
+            waveInfo.gameObject.SetActive(true);
+            yield return new WaitForSeconds(2.0f);
 
-            currentWaveIndex++;
+            waveInfo.gameObject.SetActive(false);
+            WaveData currentWave = waves[waveId];
+            SpawnWave(currentWave);
+            waveId++;
+
             yield return new WaitUntil(KillAllEnemies);
             enemiesKilled = 0;
-            waveId++;
+
             yield return new WaitForSeconds(3.0f);
         }
+
+        winner.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene(0);
     }
 
     private void SpawnWave(WaveData wave)
@@ -41,7 +53,7 @@ public class WaveManager : MonoBehaviour
         switch (wave.pattern)
         {
             case Pattern.Circle:
-                SpawnCircle(wave, 8.0f);
+                SpawnCircle(wave, 6.0f);
                 break;
             case Pattern.Rectangle:
                 SpawnRectangle(wave);
@@ -71,7 +83,7 @@ public class WaveManager : MonoBehaviour
         transform.position = wave.spawnPosition.position;
 
         float gap = 2.0f;
-        int rows = 4;
+        int rows = wave.enemyCount / 10;
         int columns = Mathf.CeilToInt((float)wave.enemyCount / rows);
 
         for (int i = 0; i < rows; i++)

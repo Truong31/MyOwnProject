@@ -26,9 +26,6 @@ public class WaveMovement : MonoBehaviour
     {
         switch (movementType)
         {
-            case MovementType.Circle:
-                Circle();
-                break;
             case MovementType.Horizontal:
                 Horizontal();
                 break;
@@ -97,16 +94,10 @@ public class WaveMovement : MonoBehaviour
     //Di chuyen hinh ZigZag
     private void ZigZag()
     {
-        float speedZigZag = 5.0f;
+        float speedZigZag = 3.0f;
         zigzagTimer += Time.deltaTime * speedZigZag;
-        float x = Mathf.Sin(zigzagTimer) * 10; // Bien do dao dong
+        float x = Mathf.Sin(zigzagTimer) * 30; // Bien do dao dong
         transform.Translate(new Vector3(x, -1, 0) * Time.deltaTime);
-    }
-
-    //Di chuyen hinh tron
-    private void Circle()
-    {
-        transform.RotateAround(new Vector3(1, 1, 1), new Vector3(0, 0, 1), speed * Time.deltaTime);
     }
 
 }

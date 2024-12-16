@@ -10,12 +10,13 @@ public class GameManager : MonoBehaviour
     public int score { get; private set; }
     public int live { get; private set; }
     public bool isBossLive;
+    public bool isBigBoss;
     public bool isGameOver;
 
-    /*TODO:        
-     *      - Hien thi so thu tu cua Wave khi bat dau wave
-     *      - Sua lai thoi gian chuyen giua Wave boss va wave thuong
-     *      - Them panel Winner (Sau khi vuot qua het tat ca cac Wave)
+    /*TODO:
+     *      
+     *      
+     *      - Them tinh nang cang ve cac Wave sau, maxHit cua Enemy cang tang
      *
      */
 

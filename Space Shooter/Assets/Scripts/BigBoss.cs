@@ -10,23 +10,30 @@ public class BigBoss : Boss
     public override void Start()
     {
         base.Start();
-        InvokeRepeating(nameof(FireRocket), 1.0f, Random.Range(2.5f, 5f));
-        InvokeRepeating(nameof(DropBomb), 1.0f, 5);
+        GameManager.Instance.isBigBoss = true;
+
+        if (currentHealth <= maxHealth * 0.8f && currentHealth > maxHealth * 0.6f)
+        {
+            InvokeRepeating(nameof(FireRocket), 1.0f, Random.Range(2.5f, 5f));
+        }
+        else if(currentHealth <= maxHealth * 0.6f && currentHealth > maxHealth * 0.4f)
+        {
+            InvokeRepeating(nameof(DropBomb), 1.0f, 5);
+        }
+        else if(currentHealth <= maxHealth * 0.4f)
+        {
+            InvokeRepeating(nameof(FireRocket), 1.0f, Random.Range(2.5f, 5f));
+            InvokeRepeating(nameof(DropBomb), 1.0f, 5);
+        }
     }
 
     private void FireRocket()
     {
-        if (currentHealth <= maxHealth)
-        {
-            Instantiate(rocketPrefabs, transform.position, Quaternion.identity);
-        }
+        Instantiate(rocketPrefabs, transform.position, Quaternion.identity);
     }
 
     private void DropBomb()
     {
-        if(currentHealth <= maxHealth)
-        {
-            Instantiate(bombPrefabs, transform.position, Quaternion.identity);
-        }
+        Instantiate(bombPrefabs, transform.position, Quaternion.identity);
     }
 }

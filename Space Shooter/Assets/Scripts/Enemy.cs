@@ -8,7 +8,6 @@ public class Enemy : MonoBehaviour
     public GameObject explosionPrefab;
     public PowerUp[] powerUpPrefabs;
 
-    private int timer;
     private bool isDead = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -42,12 +41,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //Xuat hien cac PowerUp
     private void SpawnPower(Transform enemy)
     {
-        timer += 1;
-        if (timer == Random.Range(10, 15))
+        if (Random.value < 0.01f)
         {
-            timer = 0;
             int randomPower = Random.Range(0, powerUpPrefabs.Length);
             PowerUp power = Instantiate(powerUpPrefabs[randomPower], enemy.position, Quaternion.identity);
             Destroy(power.gameObject, 5.0f);

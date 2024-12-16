@@ -5,8 +5,7 @@ using UnityEngine;
 public enum MovementType
 {
     Horizontal,
-    BouncePatrol, //Cheo
-    Circle,
+    BouncePatrol,
     ZigZag,
     Default
 }
