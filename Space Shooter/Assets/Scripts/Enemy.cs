@@ -8,32 +8,45 @@ public class Enemy : MonoBehaviour
     public GameObject explosionPrefab;
     public PowerUp[] powerUpPrefabs;
 
+    private int maxHit = 1;
     private bool isDead = false;
+
+    private void Update()
+    {
+        IncreaseMaxHit();
+        DestroyEnemy();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (isDead) return;
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player Bullet"))
         {
-            SoundManager.Instance.EnemyDeathSfx();
+            maxHit--;
+            if(maxHit <= 0)
+            {
+                SoundManager.Instance.EnemyDeathSfx();
 
-            isDead = true;
-            Destroy(collision.gameObject);
-            GameManager.Instance.AddScore(10);
-            this.killed.Invoke();
-            SpawnPower(transform);
+                isDead = true;
+                Destroy(collision.gameObject);
+                GameManager.Instance.AddScore(10);
+                this.killed.Invoke();
+                SpawnPower(transform);
 
-            GameObject explode = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(explode, 1.0f);
-            Destroy(gameObject);
+                GameObject explode = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Destroy(explode, 1.0f);
+                Destroy(gameObject);
+            }
 
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    //Enemy ra ngoai man hinh se bi Destroy
+    private void DestroyEnemy()
     {
         if (isDead) return;
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Background"))
+        Vector3 enemyPosition = Camera.main.WorldToViewportPoint(transform.position);
+        if(enemyPosition.y < -0.01)
         {
             isDead = true;
             this.killed.Invoke();
@@ -41,10 +54,27 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //Tang so vien dan chiu duoc o cac Wave sau
+    private void IncreaseMaxHit()
+    {
+        if(GameManager.Instance.waveID > 11 && GameManager.Instance.waveID < 17)
+        {
+            maxHit = 2;
+        }
+        else if(GameManager.Instance.waveID > 17 && GameManager.Instance.waveID < 23)
+        {
+            maxHit = 3;
+        }
+        else if (GameManager.Instance.waveID > 23 && GameManager.Instance.waveID < 30)
+        {
+            maxHit = 4;
+        }
+    }
+
     //Xuat hien cac PowerUp
     private void SpawnPower(Transform enemy)
     {
-        if (Random.value < 0.01f)
+        if (Random.value < 0.07f)
         {
             int randomPower = Random.Range(0, powerUpPrefabs.Length);
             PowerUp power = Instantiate(powerUpPrefabs[randomPower], enemy.position, Quaternion.identity);

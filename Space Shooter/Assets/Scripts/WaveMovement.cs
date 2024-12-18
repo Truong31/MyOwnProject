@@ -1,10 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class WaveMovement : MonoBehaviour
 {
-    private float zigzagTimer = 3f;
     private Vector3 horizontalDirection = Vector3.right;
     private Vector3 diagonalDirection;
     private float speed;
@@ -22,6 +20,7 @@ public class WaveMovement : MonoBehaviour
         this.speed = speed;
         this.movementType = movementType;
     }
+
     private void Update()
     {
         switch (movementType)
@@ -94,10 +93,14 @@ public class WaveMovement : MonoBehaviour
     //Di chuyen hinh ZigZag
     private void ZigZag()
     {
-        float speedZigZag = 3.0f;
-        zigzagTimer += Time.deltaTime * speedZigZag;
-        float x = Mathf.Sin(zigzagTimer) * 30; // Bien do dao dong
-        transform.Translate(new Vector3(x, -1, 0) * Time.deltaTime);
+        float amplitude = 10.0f; // Biên độ dao động
+        float frequency = 2.0f; // Tần số dao động
+        float verticalSpeed = 3.0f; // Tốc độ dọc
+
+        float x = Mathf.Sin(Time.time * frequency) * amplitude; // Tính dao động ngang
+        float y = transform.position.y - verticalSpeed * Time.deltaTime; // Di chuyển thẳng xuống
+
+        transform.position = new Vector3(x, y, transform.position.z); // Cập nhật vị trí
     }
 
 }

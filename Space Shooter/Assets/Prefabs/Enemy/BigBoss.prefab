@@ -338,10 +338,9 @@ GameObject:
   - component: {fileID: 8958366795884079674}
   - component: {fileID: 2964609710324875339}
   - component: {fileID: 582724270325840770}
-  - component: {fileID: 8321077778498383833}
   - component: {fileID: 7499938370883013438}
   m_Layer: 11
-  m_Name: Boss4
+  m_Name: BigBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,23 +507,6 @@ PolygonCollider2D:
       - {x: 0.8752126, y: 0.15316363}
       - {x: 0.875, y: 0.71875}
   m_UseDelaunayMesh: 0
---- !u!114 &8321077778498383833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7339747913207674707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f7e30a03b305e46917b86b7c4234c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyBullet: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
-  healthBar: {fileID: 5600207363879006095}
-  bossExplosion: {fileID: 1634694064389597777, guid: 57f45c57e8813014d8b4f2d23710191d, type: 3}
-  speed: 8
-  maxHealth: 10
 --- !u!114 &7499938370883013438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,7 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a9a3835c8ad334387398bea0556423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBullet: {fileID: 4102578434911519004, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
+  enemyBullet: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
   healthBar: {fileID: 5600207363879006095}
   bossExplosion: {fileID: 1634694064389597777, guid: 57f45c57e8813014d8b4f2d23710191d, type: 3}
   speed: 8

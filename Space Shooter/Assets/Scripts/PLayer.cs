@@ -11,6 +11,8 @@ public class PLayer : MonoBehaviour
     public GameObject shield;
     public GameObject explodePrefabs;
 
+    private bool isHit;
+
     private void Start()
     {
         gameObject.SetActive(true);
@@ -93,6 +95,7 @@ public class PLayer : MonoBehaviour
 
     public void ActiveShieldPower()
     {
+        isHit = false;
         gameObject.SetActive(true);
         StartCoroutine(ShieldPower());
     }
@@ -110,14 +113,15 @@ public class PLayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy") 
+        if((collision.gameObject.layer == LayerMask.NameToLayer("Enemy") 
             || collision.gameObject.layer == LayerMask.NameToLayer("Asteroid")
             || collision.gameObject.layer == LayerMask.NameToLayer("Enemy Bullet")
             || collision.gameObject.layer == LayerMask.NameToLayer("Boss")
             || collision.gameObject.layer == LayerMask.NameToLayer("Rocket")
-            || collision.gameObject.layer == LayerMask.NameToLayer("Bomb"))
+            || collision.gameObject.layer == LayerMask.NameToLayer("Bomb")) && !isHit)
         {
             Killed();
+            isHit = true;
             
         }
 

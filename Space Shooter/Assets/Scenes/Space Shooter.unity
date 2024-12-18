@@ -302,44 +302,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: 470, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &44680960
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 44680961}
-  m_Layer: 0
-  m_Name: Boss
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &44680961
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44680960}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1428512813}
-  - {fileID: 1002760379}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &98928371 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-  m_PrefabInstance: {fileID: 2035189393}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &99990684
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +699,7 @@ Transform:
   m_GameObject: {fileID: 338454259}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -877,91 +839,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423619768}
   m_CullTransparentMesh: 1
---- !u!1001 &425018887
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1428512813}
-    m_Modifications:
-    - target: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 2023594661}
-    - target: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: maxHealth
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: enemyBullet
-      value: 
-      objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
-    - target: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: bossExplosion
-      value: 
-      objectReference: {fileID: 1634694064389597777, guid: 57f45c57e8813014d8b4f2d23710191d, type: 3}
-    - target: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6688575681914464737, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_Name
-      value: Boss1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6688575681914464737, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
 --- !u!1 &490936589
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ffc0c5b866fa9a439b786642dd95261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveID: 0
   isBossLive: 0
   isBigBoss: 0
   isGameOver: 0
@@ -1686,499 +1564,499 @@ MonoBehaviour:
   waves:
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 2
     enemyCount: 10
     spawnPosition: {fileID: 1682834737}
     movementType: 0
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 1
     enemyCount: 20
     spawnPosition: {fileID: 2057632114}
     movementType: 0
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 0
     enemyCount: 25
     spawnPosition: {fileID: 338454260}
     movementType: 0
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 1
     enemyCount: 40
     spawnPosition: {fileID: 1682834737}
     movementType: 0
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 2
     enemyCount: 13
     spawnPosition: {fileID: 1303596482}
     movementType: 2
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
     pattern: 5
     enemyCount: 1
     spawnPosition: {fileID: 1682834737}
     movementType: 3
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 1
     enemyCount: 40
     spawnPosition: {fileID: 1682834737}
     movementType: 0
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 2
     enemyCount: 15
     spawnPosition: {fileID: 1303596482}
     movementType: 2
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 1
     enemyCount: 20
     spawnPosition: {fileID: 1303596482}
     movementType: 2
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 3
     enemyCount: 20
     spawnPosition: {fileID: 1303596482}
     movementType: 3
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 0
     enemyCount: 25
     spawnPosition: {fileID: 1682834737}
     movementType: 0
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 5
     enemyCount: 1
     spawnPosition: {fileID: 1682834737}
     movementType: 3
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 1
     enemyCount: 40
     spawnPosition: {fileID: 1682834737}
     movementType: 0
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 3
     enemyCount: 25
     spawnPosition: {fileID: 1303596482}
     movementType: 3
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 0
     enemyCount: 20
     spawnPosition: {fileID: 1682834737}
     movementType: 0
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 4
     enemyCount: 15
     spawnPosition: {fileID: 338454260}
     movementType: 1
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 1
     enemyCount: 30
     spawnPosition: {fileID: 1303596482}
     movementType: 2
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 5
     enemyCount: 1
     spawnPosition: {fileID: 1303596482}
     movementType: 3
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 1
     enemyCount: 40
     spawnPosition: {fileID: 2057632114}
     movementType: 0
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 0
     enemyCount: 30
     spawnPosition: {fileID: 2057632114}
     movementType: 0
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 1
     enemyCount: 20
     spawnPosition: {fileID: 338454260}
     movementType: 1
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 0
     enemyCount: 20
     spawnPosition: {fileID: 338454260}
     movementType: 1
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 3
     enemyCount: 20
     spawnPosition: {fileID: 338454260}
     movementType: 1
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 5
     enemyCount: 1
     spawnPosition: {fileID: 338454260}
     movementType: 3
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 1
     enemyCount: 50
     spawnPosition: {fileID: 2057632114}
     movementType: 0
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 3
     enemyCount: 20
     spawnPosition: {fileID: 1303596482}
     movementType: 3
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 2
     enemyCount: 13
     spawnPosition: {fileID: 338454260}
     movementType: 1
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 3
     enemyCount: 20
     spawnPosition: {fileID: 1303596482}
     movementType: 3
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 4
     enemyCount: 15
     spawnPosition: {fileID: 338454260}
     movementType: 3
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 3
     enemyCount: 15
     spawnPosition: {fileID: 338454260}
     movementType: 1
   - enemy: {fileID: -1130551092811324934, guid: 383572aeabdfd9845a9d3e05d562b8f9, type: 3}
     asteroid: {fileID: -7385700887150279314, guid: edbf2fe9f02a3b14a8fa460163f1ede3, type: 3}
-    bigBoss: {fileID: 760569084}
+    bigBoss: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
     planet:
     - {fileID: 1960724185839171812, guid: 63a830c39b01b3347bed3d5d2c8145b3, type: 3}
     - {fileID: -2421880207231806504, guid: 0dbcff6fe98f95846899dd140e4939b3, type: 3}
     - {fileID: 3350356270015350260, guid: 6ada5aef84be2e64b877b2b51bfb1316, type: 3}
     - {fileID: 3328613873848312772, guid: 43985420aab57184e834a5a5c281588b, type: 3}
     boss:
-    - {fileID: 1228456075}
-    - {fileID: 1610173353}
-    - {fileID: 1572777227}
+    - {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
+    - {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
+    - {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
     pattern: 6
     enemyCount: 1
-    spawnPosition: {fileID: 1303596482}
+    spawnPosition: {fileID: 338454260}
     movementType: 3
   enemyBullet: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
   speed: 10
@@ -2445,17 +2323,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &707027467 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2911795136594515869, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-  m_PrefabInstance: {fileID: 1527536404}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7ab6b3ed039e64e8132f5df5b1e382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &708730630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,91 +2359,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &751703250
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 751703252}
-  - component: {fileID: 751703251}
-  m_Layer: 0
-  m_Name: Sound Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &751703251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 751703250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24f4332cad0e0144878cec8771b58cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 83e4c3e94b470a44bae9de38a787db26, type: 2}
-  sfxSound: {fileID: 1091108784}
-  musicSound: {fileID: 2113853879}
-  click: {fileID: 8300000, guid: 771fa6038e20b694ba5ee72d9385a336, type: 3}
-  shoot: {fileID: 8300000, guid: 476c70f9a2d4a414f9519e82bae37a64, type: 3}
-  enemyDeath: {fileID: 8300000, guid: 8121996669809a944a7b6f4d6e41c63e, type: 3}
-  playerDeath: {fileID: 8300000, guid: 53fd787857e411a469fe72f92fb17123, type: 3}
-  beginning: {fileID: 8300000, guid: e19c86337fd2da04286705886adc0a16, type: 3}
-  playing: {fileID: 8300000, guid: b18fbc116941b984db624e2d8ebf0371, type: 3}
-  powerUp: {fileID: 8300000, guid: 8f0f37f8c19677646bf094151b8d16e4, type: 3}
-  bomb: {fileID: 8300000, guid: 3c18062360d25864aa4b54f6f5de05c7, type: 3}
-  bossDeath: {fileID: 8300000, guid: c52b879abda60b646925c44f9612d3d0, type: 3}
---- !u!4 &751703252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 751703250}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2113853880}
-  - {fileID: 1091108785}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &760569083 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-  m_PrefabInstance: {fileID: 2058980570}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &760569084 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-  m_PrefabInstance: {fileID: 2058980570}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8a9a3835c8ad334387398bea0556423, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &777830625 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5600207363879006095, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-  m_PrefabInstance: {fileID: 2058980570}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7ab6b3ed039e64e8132f5df5b1e382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &786865544
 GameObject:
   m_ObjectHideFlags: 0
@@ -3016,11 +2798,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!4 &917736286 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-  m_PrefabInstance: {fileID: 1527536404}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &918857526
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,193 +3104,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997038956}
   m_CullTransparentMesh: 1
---- !u!1 &1002760378
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1002760379}
-  m_Layer: 0
-  m_Name: BigBoss
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1002760379
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002760378}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 760569083}
-  m_Father: {fileID: 44680961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1053562987 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4700931430148839849, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-  m_PrefabInstance: {fileID: 2035189393}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7ab6b3ed039e64e8132f5df5b1e382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1091108783
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1091108785}
-  - component: {fileID: 1091108784}
-  m_Layer: 0
-  m_Name: SFX
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1091108784
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091108783}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 2409693964981099655, guid: 83e4c3e94b470a44bae9de38a787db26, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &1091108785
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091108783}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 751703252}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1228456074 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5174970906416862700, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-  m_PrefabInstance: {fileID: 425018887}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1228456075 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1561372832362897425, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-  m_PrefabInstance: {fileID: 425018887}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f7e30a03b305e46917b86b7c4234c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1245041431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,7 +3306,7 @@ Transform:
   m_GameObject: {fileID: 1303596481}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 16, z: 0}
+  m_LocalPosition: {x: 0, y: 16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3806,40 +3396,6 @@ Transform:
   - {fileID: 2057632114}
   - {fileID: 1303596482}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1428512812
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1428512813}
-  m_Layer: 0
-  m_Name: MiniBoss
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1428512813
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428512812}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.59, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1228456074}
-  - {fileID: 98928371}
-  - {fileID: 917736286}
-  m_Father: {fileID: 44680961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1458770228
 GameObject:
@@ -3956,118 +3512,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &1527536404
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1428512813}
-    m_Modifications:
-    - target: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 707027467}
-    - target: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: maxHealth
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: enemyBullet
-      value: 
-      objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
-    - target: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: bossExplosion
-      value: 
-      objectReference: {fileID: 1634694064389597777, guid: 57f45c57e8813014d8b4f2d23710191d, type: 3}
-    - target: {fileID: 2003084669899549747, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_Name
-      value: Boss3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2003084669899549747, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292206295383034716, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
---- !u!114 &1572777227 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -8712199283874756258, guid: d5acab44f7e8a934d82ef14c284ab913, type: 3}
-  m_PrefabInstance: {fileID: 1527536404}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f7e30a03b305e46917b86b7c4234c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1575429304 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5428257238879439495, guid: 698f62867f189b745b7b9a9873ece079, type: 3}
-  m_PrefabInstance: {fileID: 1783568933}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1610173353 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-  m_PrefabInstance: {fileID: 2035189393}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f7e30a03b305e46917b86b7c4234c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1620636495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4129,7 +3573,7 @@ Transform:
   m_GameObject: {fileID: 1682834736}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27, y: 9, z: 0}
+  m_LocalPosition: {x: -29, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4683,102 +4127,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 38}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2023594661 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2766151468478663400, guid: 800d5f87b16e37f4b8799cb392e063a7, type: 3}
-  m_PrefabInstance: {fileID: 425018887}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7ab6b3ed039e64e8132f5df5b1e382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1001 &2035189393
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1428512813}
-    m_Modifications:
-    - target: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 1053562987}
-    - target: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: maxHealth
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: enemyBullet
-      value: 
-      objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
-    - target: {fileID: 606939043703344574, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: bossExplosion
-      value: 
-      objectReference: {fileID: 1634694064389597777, guid: 57f45c57e8813014d8b4f2d23710191d, type: 3}
-    - target: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326557011896346110, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4346130638802789758, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_Name
-      value: Boss2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4346130638802789758, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1e88dad6b66d5024b961cba0ebb32783, type: 3}
 --- !u!1 &2057632113
 GameObject:
   m_ObjectHideFlags: 0
@@ -4804,261 +4152,11 @@ Transform:
   m_GameObject: {fileID: 2057632113}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27, y: 9, z: 0}
+  m_LocalPosition: {x: 29, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1328132562}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2058980570
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1002760379}
-    m_Modifications:
-    - target: {fileID: 736451069260660331, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 736451069260660331, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7339747913207674707, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_Name
-      value: Boss4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7339747913207674707, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1575429304}
-    - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 777830625}
-    - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: maxHealth
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: bombPrefabs
-      value: 
-      objectReference: {fileID: 7998906955291650822, guid: 91f309662e1aeb444ae9f2677bae7498, type: 3}
-    - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: enemyBullet
-      value: 
-      objectReference: {fileID: 3955215420193894620, guid: 03adafeedb6ca0e42953c2c956df00cc, type: 3}
-    - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: bossExplosion
-      value: 
-      objectReference: {fileID: 1634694064389597777, guid: 57f45c57e8813014d8b4f2d23710191d, type: 3}
-    - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: rocketPrefabs
-      value: 
-      objectReference: {fileID: -1612885814033494109, guid: 109f4ec8310fe7343b8558183c7d57e5, type: 3}
-    - target: {fileID: 7499938370883013438, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: playerPosition
-      value: 
-      objectReference: {fileID: 1575429304}
-    - target: {fileID: 8321077778498383833, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8321077778498383833, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958366795884079674, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8321077778498383833, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 37ab216187183534c9b8985c0a023abf, type: 3}
---- !u!1 &2113853878
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2113853880}
-  - component: {fileID: 2113853879}
-  m_Layer: 0
-  m_Name: Music
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &2113853879
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113853878}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -3047160130873133831, guid: 83e4c3e94b470a44bae9de38a787db26, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 0.8
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &2113853880
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113853878}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 751703252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2134848843
 GameObject:
@@ -5210,11 +4308,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 490936591}
-  - {fileID: 751703252}
   - {fileID: 645033916}
   - {fileID: 1306751731}
   - {fileID: 1783568933}
-  - {fileID: 44680961}
   - {fileID: 1245041435}
   - {fileID: 1805985800}
   - {fileID: 1328132562}

@@ -9,14 +9,13 @@ public class GameManager : MonoBehaviour
 
     public int score { get; private set; }
     public int live { get; private set; }
+    public int waveID;
     public bool isBossLive;
     public bool isBigBoss;
     public bool isGameOver;
 
     /*TODO:
      *      
-     *      
-     *      - Them tinh nang cang ve cac Wave sau, maxHit cua Enemy cang tang
      *
      */
 
@@ -66,6 +65,7 @@ public class GameManager : MonoBehaviour
     {
         if (live == 0)
         {
+            SoundManager.Instance.GameOverSfx();
             isGameOver = true;
             yield return new WaitForSeconds(3f);
             NewGame();

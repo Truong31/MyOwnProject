@@ -26,6 +26,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip powerUp;
     public AudioClip bomb;
     public AudioClip bossDeath;
+    public AudioClip winner;
+    public AudioClip gameOver;
 
     private void Awake()
     {
@@ -83,6 +85,16 @@ public class SoundManager : MonoBehaviour
     public void BossDeathSfx()
     {
         sfxSound.PlayOneShot(bossDeath);
+    }
+
+    public void GameOverSfx()
+    {
+        sfxSound.PlayOneShot(gameOver);
+    }
+
+    public void WinnerSfx()
+    {
+        sfxSound.PlayOneShot(winner);
     }
 
 }

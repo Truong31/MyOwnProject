@@ -2182,6 +2182,8 @@ MonoBehaviour:
   powerUp: {fileID: 8300000, guid: 8f0f37f8c19677646bf094151b8d16e4, type: 3}
   bomb: {fileID: 8300000, guid: 3c18062360d25864aa4b54f6f5de05c7, type: 3}
   bossDeath: {fileID: 8300000, guid: c52b879abda60b646925c44f9612d3d0, type: 3}
+  winner: {fileID: 8300000, guid: 19ff424aac1a0244abcf2ed06429fb30, type: 3}
+  gameOver: {fileID: 8300000, guid: 309f6f7883c8f814dbfde9e48a219aea, type: 3}
 --- !u!4 &1816818061
 Transform:
   m_ObjectHideFlags: 0

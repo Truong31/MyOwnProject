@@ -28,6 +28,7 @@ public class WaveManager : MonoBehaviour
     {
         while(waveId < waves.Count)
         {
+            GameManager.Instance.waveID = waveId;
             waveInfo.text = "Wave " + (waveId + 1);
             waveInfo.gameObject.SetActive(true);
             yield return new WaitForSeconds(2.0f);
@@ -44,6 +45,7 @@ public class WaveManager : MonoBehaviour
         }
 
         winner.gameObject.SetActive(true);
+        SoundManager.Instance.WinnerSfx();
         yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene(0);
     }
@@ -184,18 +186,18 @@ public class WaveManager : MonoBehaviour
     private void SpawnBoss(WaveData wave)
     {
         totalEnemies = wave.enemyCount;
-
         int random = Random.Range(0, wave.boss.Length);
-        wave.boss[random].gameObject.SetActive(true);
-        wave.boss[random].killed += EnemyKilled;
+        Boss boss = Instantiate(wave.boss[random], wave.spawnPosition.position, Quaternion.identity);
+        boss.killed += EnemyKilled;
 
     }
 
     private void SpawnBigBoss(WaveData wave)
     {
         totalEnemies = wave.enemyCount;
-        wave.bigBoss.gameObject.SetActive(true);
-        wave.bigBoss.killed += EnemyKilled;
+        int random = Random.Range(0, wave.boss.Length);
+        BigBoss bigBoss = Instantiate(wave.bigBoss, wave.spawnPosition.position, Quaternion.identity);
+        bigBoss.killed += EnemyKilled;
     }
 
     private void EnemyKilled()
