@@ -523,7 +523,7 @@ MonoBehaviour:
   healthBar: {fileID: 5600207363879006095}
   bossExplosion: {fileID: 1634694064389597777, guid: 57f45c57e8813014d8b4f2d23710191d, type: 3}
   speed: 8
-  maxHealth: 10
+  maxHealth: 200
   rocketPrefabs: {fileID: -1612885814033494109, guid: 109f4ec8310fe7343b8558183c7d57e5, type: 3}
   bombPrefabs: {fileID: 7998906955291650822, guid: 91f309662e1aeb444ae9f2677bae7498, type: 3}
 --- !u!1 &8820663621119257230

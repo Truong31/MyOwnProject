@@ -10,14 +10,10 @@ public class GameManager : MonoBehaviour
     public int score { get; private set; }
     public int live { get; private set; }
     public int waveID;
+    public int totalWave;
     public bool isBossLive;
     public bool isBigBoss;
     public bool isGameOver;
-
-    /*TODO:
-     *      
-     *
-     */
 
     private void Awake()
     {

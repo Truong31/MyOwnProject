@@ -11,9 +11,16 @@ public class Enemy : MonoBehaviour
     private int maxHit = 1;
     private bool isDead = false;
 
-    private void Update()
+    [Range(0.03f, 0.06f)]
+    private float itemSpawnChance = 0.04f;
+
+    private void Start()
     {
         IncreaseMaxHit();
+    }
+
+    private void Update()
+    {
         DestroyEnemy();
     }
 
@@ -74,7 +81,7 @@ public class Enemy : MonoBehaviour
     //Xuat hien cac PowerUp
     private void SpawnPower(Transform enemy)
     {
-        if (Random.value < 0.07f)
+        if (Random.Range(0.0f, 1f) < itemSpawnChance)
         {
             int randomPower = Random.Range(0, powerUpPrefabs.Length);
             PowerUp power = Instantiate(powerUpPrefabs[randomPower], enemy.position, Quaternion.identity);

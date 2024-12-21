@@ -10,15 +10,17 @@ public class WaveManager : MonoBehaviour
     public GameObject enemyBullet;
 
     private int waveId = 0;
-    public float speed = 6f;
+    private float waveSpeed = 6.0f;
     private int totalEnemies;
     private int enemiesKilled = 0;
+    private float bulletSpeed = 8.0f;
 
     public TextMeshProUGUI waveInfo;
     public TextMeshProUGUI winner;
 
     private void Start()
     {
+        GameManager.Instance.totalWave = waves.Count;
         winner.gameObject.SetActive(false);
         InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
         StartCoroutine(SpawnWaves());
@@ -40,6 +42,7 @@ public class WaveManager : MonoBehaviour
 
             yield return new WaitUntil(KillAllEnemies);
             enemiesKilled = 0;
+            IncreaseSpeed();
 
             yield return new WaitForSeconds(3.0f);
         }
@@ -78,7 +81,7 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    //Tao Wave hinh chu nhat
+    //NOTE: Tao Wave hinh chu nhat
     private void SpawnRectangle(WaveData wave)
     {
         totalEnemies = wave.enemyCount;
@@ -102,14 +105,14 @@ public class WaveManager : MonoBehaviour
                 Enemy enemy = Instantiate(wave.enemy, position + transform.position, Quaternion.identity);
                 enemy.transform.SetParent(transform);
                 WaveMovement movement = GetComponent<WaveMovement>();
-                movement.Initialize(speed, wave.movementType);
+                movement.Initialize(waveSpeed, wave.movementType);
 
                 enemy.killed += EnemyKilled;
             }
         }
     }
 
-    //Tao Wave hinh tron
+    //NOTE: Tao Wave hinh tron
     private void SpawnCircle(WaveData wave, float radius)
     {
         transform.position = wave.spawnPosition.position;
@@ -125,14 +128,14 @@ public class WaveManager : MonoBehaviour
             Vector3 position = new Vector3(x, y, 0);
             Enemy enemy = Instantiate(wave.enemy, position + transform.position, Quaternion.identity);
             WaveMovement movement = GetComponent<WaveMovement>();
-            movement.Initialize(speed, wave.movementType);
+            movement.Initialize(waveSpeed, wave.movementType);
             enemy.transform.SetParent(transform);
             enemy.killed += EnemyKilled;
         }
 
     }
 
-    //Tao Wave dang Line
+    //NOTE: Tao Wave dang Line
     private void SpawnLine(WaveData wave)
     {
         totalEnemies = wave.enemyCount;
@@ -148,14 +151,14 @@ public class WaveManager : MonoBehaviour
 
             enemy.transform.SetParent(transform);
             WaveMovement movement = GetComponent<WaveMovement>();
-            movement.Initialize(speed, wave.movementType);
+            movement.Initialize(waveSpeed, wave.movementType);
 
             enemy.killed += EnemyKilled;
         }
 
     }
 
-    //Tao Wave cac Asteroid hoac cac Planet
+    //NOTE: Tao Wave cac Asteroid hoac cac Planet
     private void SpawnAsteroid(WaveData wave)
     {
         totalEnemies = wave.enemyCount;
@@ -222,11 +225,26 @@ public class WaveManager : MonoBehaviour
             if (Random.value < 0.1f)
             {
                 GameObject bullet = Instantiate(enemyBullet, enemy.position, Quaternion.identity);
-                bullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * 8.0f;
+                bullet.GetComponent<Rigidbody2D>().velocity = Vector2.down * bulletSpeed;
                 Destroy(bullet, 6.0f);
                 break;
             }
 
+        }
+    }
+
+    //NOTE: Tang toc do vien dan o cac wave sau
+    private void IncreaseSpeed()
+    {
+        if(waveId == (waves.Count + 1) * 2 / 5)
+        {
+            bulletSpeed *= 2;
+            waveSpeed *= 1.5f;
+        }
+        if(waveId == (waves.Count + 1) * 4 / 5)
+        {
+            bulletSpeed *= 3;
+            waveSpeed *= 2;
         }
     }
 

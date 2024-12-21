@@ -71,6 +71,9 @@ public class WaveMovement : MonoBehaviour
         Vector3 bottomEdge = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0, 0));
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
+
+        bool shouldBounce = false;
+
         foreach (Transform enemy in transform)
         {
             if (!enemy.gameObject.activeInHierarchy) // Kiem tra xem doi tuong co dang hoat dong
@@ -80,13 +83,20 @@ public class WaveMovement : MonoBehaviour
             if (enemy.position.y >= (topEdge.y - 0.5f) || enemy.position.y <= (bottomEdge.y + 0.5f))
             {
                 diagonalDirection.y *= -1;
+                shouldBounce = true;
                 break;
             }
             if (enemy.position.x >= (rightEdge.x - 0.5f) || enemy.position.x <= (leftEdge.x + 0.5f))
             {
                 diagonalDirection.x *= -1;
+                shouldBounce = true;
                 break;
             }
+            
+        }
+        if (shouldBounce)
+        {
+            transform.position += diagonalDirection * 0.1f;
         }
     }
 

@@ -12,12 +12,13 @@ public class Boss : MonoBehaviour
 
     private int bulletCount = 16;
     private float radius = 1.0f;
-    public float speed = 8.0f;
+    private float speed = 8.0f;
     public int maxHealth = 10;
     public int currentHealth { get; private set; }
 
     public virtual void Start()
     {
+        InvokeRepeating(nameof(Increase), 1, 1);
         GameManager.Instance.isBossLive = true;
 
         healthBar.gameObject.SetActive(true);
@@ -104,6 +105,24 @@ public class Boss : MonoBehaviour
 
             Destroy(bullets, 5.0f);
 
+        }
+    }
+
+    //NOTE: Tang toc so, so vien dan o cac wave sau
+    private void Increase()
+    {
+        int waveID = GameManager.Instance.waveID;
+        int totalWave = GameManager.Instance.totalWave;
+
+        if (waveID == (totalWave + 1) * 2 / 5)
+        {
+            speed *= 1.5f;
+            bulletCount += 6;
+        }
+        if (waveID == (totalWave + 1) * 4 / 5)
+        {
+            speed *= 2;
+            bulletCount += 6;
         }
     }
 
