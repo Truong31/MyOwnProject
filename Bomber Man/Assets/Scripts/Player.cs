@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
         activeSpriteAnimation = spriteAnimationDown;
     }
 
+    //NOTE: thiet lap cac nut dieu khien di chuyen cho player
     private void Update()
     {
         if (Input.GetKey(left))
@@ -58,6 +59,7 @@ public class Player : MonoBehaviour
         rigidbody2D.MovePosition(position + direction);
     }
 
+    //NOTE: thiet lap huong di chuyen
     private void setDirection(Vector2 newDirection, SpriteAnimation spriteAnimation)
     {
         moveDirection = newDirection;
@@ -72,7 +74,7 @@ public class Player : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
@@ -80,6 +82,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    //NOTE: Thiet lap trang thai chet cho player
     private IEnumerator PlayerDeath()
     {
         this.enabled = false;

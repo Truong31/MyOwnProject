@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     /*  Cơ chế game
@@ -18,28 +18,29 @@ public class GameManager : MonoBehaviour
      *  Chi tiết
      *  Nhân vật:
      *      - Di chuyển kiểu top-down (Done)
-     *      - Nhấn nút space sẽ thả ra 1 quả bom ngay dưới chân. Có khả năng đẩy quả bom theo hướng nhất định.
-     *      - Đụng phải tia lửa của bom, kẻ địch sẽ mất 1 mạng
+     *      - Nhấn nút space sẽ thả ra 1 quả bom ngay dưới chân. Có khả năng đẩy quả bom theo hướng nhất định.(Done)
+     *      - Đụng phải tia lửa của bom sẽ mất 1 mạng.
      *      - Có 3 mạng, hết 3 mạng sẽ kết thúc (Chế độ 1 người).
-     *      - Có animation khi di chuyển, khi chết.
+     *      - Có animation khi di chuyển, khi chết. (Done)
      *  
-     *  Quả bom:
-     *      - Phát nổ sau khoảng 3s.
-     *      - Khi phát nổ sẽ tỏa 2 tia lửa theo 4 hướng (ban đầu tia lửa sẽ chiếm 1 ô).
-     *      - Tia lửa có khả năng phá hủy các khối brick.
-     *      - Có animation trước và sau khi phát nổ.
+     *  Quả bom:(Done)
+     *      - Phát nổ sau khoảng 3s.(Done)
+     *      - Khi phát nổ sẽ tỏa 2 tia lửa theo 4 hướng (ban đầu tia lửa sẽ chiếm 1 ô).(Done)
+     *      - Tia lửa có khả năng phá hủy các khối brick.(Done)
+     *      - Có animation trước và sau khi phát nổ.(Done)
      *      
      *  Kẻ địch
      *      - Tự di chuyển(theo hướng ngang dọc).   (Thiết kế thêm khả năng tránh quả bom nhưng không tuyệt đối)
      *      - Bị tiêu diệt bởi các tia lửa từ quả bom.
      *      - Có animation khi di chuyển, khi chết.
      *  
-     *  Power up
+     *  Power up(Done)
      *      - Có tổng cộng 3 power up.
      *          + Tăng tốc độ(Speed): tốc độ người chơi sẽ tăng thêm 1 đơn vị.
      *          + Thêm mạng(Live): cộng thêm 1 mạng cho người chơi.
      *          + Tăng kích cỡ vụ nổ(Blast): các quả bom do người chơi thả ra sẽ có vụ nổ to hơn trước 1 đơn vị.
      *      - Các power up sẽ ẩn dưới các khối brick, xuất hiện 1 cách random.
+     *  
      *  
      *  Scene
      *      - 1 Scene màn hình chính:
@@ -65,7 +66,11 @@ public class GameManager : MonoBehaviour
      *  UX/UI: thêm các âm thanh, hiệu ứng, text.
      */
 
-    public static GameManager instance;
+    public int lives;
+    public int score;
+    public int totalEnemies { get; private set; }
+    public int stage;
+    public static GameManager instance { get; private set; }
 
     public void Awake()
     {
@@ -76,7 +81,38 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            DestroyImmediate(gameObject);
         }
+    }
+
+    public void NewGame()
+    {
+        this.lives = 3;
+        this.score = 0;
+        this.stage = 1;
+        LoadStage();
+    }
+
+    public void LoadStage()
+    {
+        SceneManager.LoadScene("Stage" + this.stage);
+        this.stage++;
+        Enemies();
+    }
+
+    public void AddLive()
+    {
+        this.lives++;
+    }
+
+    public void AddScore(int score)
+    {
+        this.score += score;
+    }
+
+    public void Enemies()
+    {
+        Enemy[] enemy = FindObjectsOfType<Enemy>();
+        totalEnemies = enemy.Length;
     }
 }

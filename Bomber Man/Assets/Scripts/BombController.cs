@@ -6,14 +6,19 @@ using UnityEngine.Tilemaps;
 public class BombController : MonoBehaviour
 {
     [Header("Bomb")]
-    public BombExplosion explosionPrefabs;
     public int explosionRadius;
     public int bombRemain;
     public GameObject bombPrefabs;
+
+    [Header("Explosion")]
+    public BombExplosion explosionPrefabs;
     public float explosionTime;
     public LayerMask explosionLayer;
+
+    [Header("Destruction")]
     public Tilemap brick;
-    public GameObject brickDestruction;
+    public Destruction brickDestruction;
+
     private void Update()
     {
         if(bombRemain > 0 && Input.GetKeyDown(KeyCode.Space))
@@ -22,8 +27,10 @@ public class BombController : MonoBehaviour
         }
     }
 
+    //NOTE: Phuong thuc dat bom
     private IEnumerator PlaceBomb()
     {
+        //Lay vi tri duoc lam tron de dat bom
         Vector2 position = this.transform.position;
         position.x = Mathf.Round(position.x);
         position.y = Mathf.Round(position.y);
@@ -49,6 +56,7 @@ public class BombController : MonoBehaviour
         bombRemain++;
     }
 
+    //NOTE: Tao ra tia lua
     private void Explode(Vector2 direction, Vector2 position, int length)
     {
         if(length <= 0)
@@ -57,6 +65,7 @@ public class BombController : MonoBehaviour
         }
         position += direction;
 
+        //Tia lua va cham voi object co layer la explosionLayer (brick, block) se dung lai, dong thoi pha huy khoi brick da va cham.
         if (Physics2D.OverlapBox(position, Vector2.one / 2, 0, explosionLayer))
         {
             ClearBrick(position);
@@ -72,6 +81,7 @@ public class BombController : MonoBehaviour
         Explode(direction, position, length - 1);
     }
 
+    //NOTE: Pha huy brick sau khi va cham voi tia lua cua bom
     private void ClearBrick(Vector2 position)
     {
         Vector3Int cell = brick.WorldToCell(position);
@@ -85,6 +95,13 @@ public class BombController : MonoBehaviour
 
     }
 
+    //NOTE: Them bom sau khi an power ExtraBomb
+    public void AddBomb()
+    {
+        this.bombRemain++;
+    }
+
+    //NOTE: Tat isTrigger de player co the day cac qua bom theo huong
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Bomb"))
