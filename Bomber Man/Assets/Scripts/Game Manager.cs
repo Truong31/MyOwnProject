@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
      *          + Có thể chọn các map bất kỳ để chơi.
      *
      *  Chi tiết
-     *  Nhân vật:
+     *  Nhân vật:(Done)
      *      - Di chuyển kiểu top-down (Done)
      *      - Nhấn nút space sẽ thả ra 1 quả bom ngay dưới chân. Có khả năng đẩy quả bom theo hướng nhất định.(Done)
      *      - Đụng phải tia lửa của bom sẽ mất 1 mạng.
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
      *      - Tia lửa có khả năng phá hủy các khối brick.(Done)
      *      - Có animation trước và sau khi phát nổ.(Done)
      *      
-     *  Kẻ địch
+     *  Kẻ địch(Done)
      *      - Tự di chuyển(theo hướng ngang dọc).   (Thiết kế thêm khả năng tránh quả bom nhưng không tuyệt đối)
      *      - Bị tiêu diệt bởi các tia lửa từ quả bom.
      *      - Có animation khi di chuyển, khi chết.
@@ -66,10 +66,9 @@ public class GameManager : MonoBehaviour
      *  UX/UI: thêm các âm thanh, hiệu ứng, text.
      */
 
-    public int lives;
-    public int score;
     public int totalEnemies { get; private set; }
     public int stage;
+    public float time { get; private set; }
     public static GameManager instance { get; private set; }
 
     public void Awake()
@@ -85,32 +84,39 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        NewGame();
+    }
+
+    private void Update()
+    {
+        EnemiesScan();
+    }
+
+    private void FixedUpdate()
+    {
+        time -= 1 * Time.fixedDeltaTime;
+    }
+
     public void NewGame()
     {
-        this.lives = 3;
-        this.score = 0;
+        time = 180f;
         this.stage = 1;
-        LoadStage();
+        //LoadStage();
     }
 
-    public void LoadStage()
-    {
-        SceneManager.LoadScene("Stage" + this.stage);
-        this.stage++;
-        Enemies();
-    }
+    //public void LoadStage()
+    //{
+    //    EnemiesScan();
+    //    if (this.totalEnemies <= 0 && this.time >= 0)
+    //    {
+    //        this.stage++;
+    //        SceneManager.LoadScene("Level" + this.stage);
+    //    } 
+    //}
 
-    public void AddLive()
-    {
-        this.lives++;
-    }
-
-    public void AddScore(int score)
-    {
-        this.score += score;
-    }
-
-    public void Enemies()
+    public void EnemiesScan()
     {
         Enemy[] enemy = FindObjectsOfType<Enemy>();
         totalEnemies = enemy.Length;

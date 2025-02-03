@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public float speed = 5.0f;
     private Vector2 moveDirection;
+    public Transform startPosition;
 
     public KeyCode left = KeyCode.A;
     public KeyCode right = KeyCode.D;
@@ -23,8 +24,8 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        activeSpriteAnimation = spriteAnimationDown;
+        this.rigidbody2D = GetComponent<Rigidbody2D>();
+        this.activeSpriteAnimation = spriteAnimationDown;
     }
 
     //NOTE: thiet lap cac nut dieu khien di chuyen cho player
@@ -56,21 +57,21 @@ public class Player : MonoBehaviour
     {
         Vector2 position = rigidbody2D.position;
         Vector2 direction = moveDirection * speed * Time.fixedDeltaTime;
-        rigidbody2D.MovePosition(position + direction);
+        this.rigidbody2D.MovePosition(position + direction);
     }
 
     //NOTE: thiet lap huong di chuyen
     private void setDirection(Vector2 newDirection, SpriteAnimation spriteAnimation)
     {
-        moveDirection = newDirection;
+        this.moveDirection = newDirection;
 
         this.spriteAnimationLeft.enabled = spriteAnimation == this.spriteAnimationLeft;
         this.spriteAnimationRight.enabled = spriteAnimation == this.spriteAnimationRight;
         this.spriteAnimationUp.enabled = spriteAnimation == this.spriteAnimationUp;
         this.spriteAnimationDown.enabled = spriteAnimation == this.spriteAnimationDown;
 
-        activeSpriteAnimation = spriteAnimation;
-        activeSpriteAnimation.idle = moveDirection == Vector2.zero;
+        this.activeSpriteAnimation = spriteAnimation;
+        this.activeSpriteAnimation.idle = this.moveDirection == Vector2.zero;
 
     }
 
@@ -86,7 +87,7 @@ public class Player : MonoBehaviour
     private IEnumerator PlayerDeath()
     {
         this.enabled = false;
-        GetComponent<BombController>().enabled = false;
+        GetComponent<BombController>().place = KeyCode.A;
 
         this.spriteAnimationLeft.enabled = false;
         this.spriteAnimationRight.enabled = false;
@@ -98,5 +99,15 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         this.gameObject.SetActive(false);
+
+        //if(GameManager.instance.time >= 0)
+        //{
+        //    this.enabled = true;
+        //    GetComponent<BombController>().place = KeyCode.Space;
+        //    this.gameObject.SetActive(true);
+        //    this.transform.position = startPosition.position;
+        //    this.spriteAnimationDeath.enabled = false;
+        //    this.activeSpriteAnimation = this.spriteAnimationDown;
+        //}
     }
 }
