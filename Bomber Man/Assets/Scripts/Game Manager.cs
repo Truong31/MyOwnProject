@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         NewGame();
+        EnemiesScan();
     }
 
     private void Update()
@@ -103,7 +104,6 @@ public class GameManager : MonoBehaviour
     {
         time = 180f;
         this.stage = 1;
-        //LoadStage();
     }
 
     //public void LoadStage()
@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
     //    } 
     //}
 
-    public void EnemiesScan()
+    private void EnemiesScan()
     {
         Enemy[] enemy = FindObjectsOfType<Enemy>();
         totalEnemies = enemy.Length;

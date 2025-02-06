@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 6971902482426455054}
   - component: {fileID: 3395187108859345334}
   - component: {fileID: 4068722228043126787}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.3}
   serializedVersion: 2
-  m_Radius: 0.48
+  m_Radius: 0.5
 --- !u!50 &3395187108859345334
 Rigidbody2D:
   serializedVersion: 4
@@ -372,7 +372,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f43e2c2fed8959645aa2b36a3bb68304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle:
+  moveSpeed: 3
+  obstacleLayer:
     serializedVersion: 2
     m_Bits: 1600
   spriteAnimationUp: {fileID: 6519782056040266237}

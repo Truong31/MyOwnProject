@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public float speed = 5.0f;
@@ -98,16 +98,6 @@ public class Player : MonoBehaviour
 
         yield return new WaitForSeconds(2.0f);
 
-        this.gameObject.SetActive(false);
-
-        //if(GameManager.instance.time >= 0)
-        //{
-        //    this.enabled = true;
-        //    GetComponent<BombController>().place = KeyCode.Space;
-        //    this.gameObject.SetActive(true);
-        //    this.transform.position = startPosition.position;
-        //    this.spriteAnimationDeath.enabled = false;
-        //    this.activeSpriteAnimation = this.spriteAnimationDown;
-        //}
+        SceneManager.LoadScene("MainMenu");
     }
 }
