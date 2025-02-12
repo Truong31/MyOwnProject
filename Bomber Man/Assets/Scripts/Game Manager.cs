@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
     /*  Cơ chế game
@@ -14,33 +16,6 @@ public class GameManager : MonoBehaviour
      *      + Chế độ 2 - 4 người chơi
      *          + Mỗi người điều khiển một người chơi (tự chọn). Người chiến thắng là người cuối cùng còn sống.
      *          + Có thể chọn các map bất kỳ để chơi.
-     *
-     *  Chi tiết
-     *  Nhân vật:(Done)
-     *      - Di chuyển kiểu top-down (Done)
-     *      - Nhấn nút space sẽ thả ra 1 quả bom ngay dưới chân. Có khả năng đẩy quả bom theo hướng nhất định.(Done)
-     *      - Đụng phải tia lửa của bom sẽ mất 1 mạng.
-     *      - Có 3 mạng, hết 3 mạng sẽ kết thúc (Chế độ 1 người).
-     *      - Có animation khi di chuyển, khi chết. (Done)
-     *  
-     *  Quả bom:(Done)
-     *      - Phát nổ sau khoảng 3s.(Done)
-     *      - Khi phát nổ sẽ tỏa 2 tia lửa theo 4 hướng (ban đầu tia lửa sẽ chiếm 1 ô).(Done)
-     *      - Tia lửa có khả năng phá hủy các khối brick.(Done)
-     *      - Có animation trước và sau khi phát nổ.(Done)
-     *      
-     *  Kẻ địch(Done)
-     *      - Tự di chuyển(theo hướng ngang dọc).   (Thiết kế thêm khả năng tránh quả bom nhưng không tuyệt đối)
-     *      - Bị tiêu diệt bởi các tia lửa từ quả bom.
-     *      - Có animation khi di chuyển, khi chết.
-     *  
-     *  Power up(Done)
-     *      - Có tổng cộng 3 power up.
-     *          + Tăng tốc độ(Speed): tốc độ người chơi sẽ tăng thêm 1 đơn vị.
-     *          + Thêm mạng(Live): cộng thêm 1 mạng cho người chơi.
-     *          + Tăng kích cỡ vụ nổ(Blast): các quả bom do người chơi thả ra sẽ có vụ nổ to hơn trước 1 đơn vị.
-     *      - Các power up sẽ ẩn dưới các khối brick, xuất hiện 1 cách random.
-     *  
      *  
      *  Scene
      *      - 1 Scene màn hình chính:
@@ -67,58 +42,59 @@ public class GameManager : MonoBehaviour
      */
 
     public int totalEnemies { get; private set; }
-    public int stage;
     public float time { get; private set; }
-    public static GameManager instance { get; private set; }
-
-    public void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            DestroyImmediate(gameObject);
-        }
-    }
+    public TextMeshProUGUI timeText;
+    public GameObject pausePanel;
 
     private void Start()
     {
-        NewGame();
+        time = 180f;
+        Time.timeScale = 1;
         EnemiesScan();
+        SoundManager.instance.BackGround();
     }
 
     private void Update()
     {
         EnemiesScan();
+        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButton(1))
+        {
+            PauseGame();
+        }
     }
 
     private void FixedUpdate()
     {
-        time -= 1 * Time.fixedDeltaTime;
+        if(time > 0)
+        {
+            time -= 1 * Time.fixedDeltaTime;   
+        }
+        else if(time <= 0)
+        {
+            time = 0;
+        }
+        timeText.text = Mathf.CeilToInt(this.time) + "";
     }
-
-    public void NewGame()
-    {
-        time = 180f;
-        this.stage = 1;
-    }
-
-    //public void LoadStage()
-    //{
-    //    EnemiesScan();
-    //    if (this.totalEnemies <= 0 && this.time >= 0)
-    //    {
-    //        this.stage++;
-    //        SceneManager.LoadScene("Level" + this.stage);
-    //    } 
-    //}
 
     private void EnemiesScan()
     {
         Enemy[] enemy = FindObjectsOfType<Enemy>();
         totalEnemies = enemy.Length;
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void PauseGame()
+    {
+        pausePanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
     }
 }

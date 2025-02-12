@@ -4,15 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
+    public GameManager gameManager;
+
+    [Header("Movement")]
     public float speed = 5.0f;
     private Vector2 moveDirection;
     public Transform startPosition;
 
+    [Header("Control")]
     public KeyCode left = KeyCode.A;
     public KeyCode right = KeyCode.D;
     public KeyCode up = KeyCode.W;
     public KeyCode down = KeyCode.S;
 
+    [Header("Animation")]
     public SpriteAnimation spriteAnimationLeft;
     public SpriteAnimation spriteAnimationRight;
     public SpriteAnimation spriteAnimationUp;
@@ -51,6 +56,11 @@ public class Player : MonoBehaviour
         {
             setDirection(Vector2.zero, activeSpriteAnimation);
         }
+
+        if(gameManager.time <= 0)
+        {
+            StartCoroutine(PlayerDeath());
+        }
     }
 
     private void FixedUpdate()
@@ -77,7 +87,8 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Explosion")
+            || collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             StartCoroutine(PlayerDeath());
         }
@@ -88,6 +99,7 @@ public class Player : MonoBehaviour
     {
         this.enabled = false;
         GetComponent<BombController>().place = KeyCode.A;
+        SoundManager.instance.PlayerDeath();
 
         this.spriteAnimationLeft.enabled = false;
         this.spriteAnimationRight.enabled = false;

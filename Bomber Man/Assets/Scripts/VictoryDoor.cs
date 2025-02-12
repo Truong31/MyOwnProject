@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class VictoryDoor : MonoBehaviour
 {
     private BoxCollider2D boxCollider2D;
+    public GameManager gameManager;
 
     private void Awake()
     {
@@ -14,7 +15,7 @@ public class VictoryDoor : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.totalEnemies <= 0)
+        if (gameManager.totalEnemies <= 0 && gameManager.time > 0)
         {
             boxCollider2D.enabled = true;
         }
@@ -24,18 +25,28 @@ public class VictoryDoor : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            UnlockLevel();
-            SceneManager.LoadScene("MainMenu");
+            StartCoroutine(UnlockLevel());
         }
     }
 
-    private void UnlockLevel()
+    private IEnumerator UnlockLevel()
     {
-        if(SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("UnlockedLevel", 1))
+        if(PlayerPrefs.GetInt("UnlockedLevel") >= 6)
         {
-            //PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
-            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
-            PlayerPrefs.Save();
+            SoundManager.instance.ClearAllStage();
+            yield return new WaitForSeconds(13.0f);
         }
+        else
+        {
+            SoundManager.instance.ClearStage();
+            yield return new WaitForSeconds(3.0f);
+
+            if(SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("UnlockedLevel", 1))
+            {
+                PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+                PlayerPrefs.Save();
+            }
+        }
+        SceneManager.LoadScene("MainMenu");
     }
 }

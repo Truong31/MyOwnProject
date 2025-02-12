@@ -18,6 +18,7 @@ public class PowerUp : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            SoundManager.instance.PowerUp();
             if (power.Equals(TYPE.Speed))
             {
                 collision.gameObject.GetComponent<Player>().speed++;

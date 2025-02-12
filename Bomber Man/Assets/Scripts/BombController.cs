@@ -34,6 +34,8 @@ public class BombController : MonoBehaviour
     //NOTE: Phuong thuc dat bom
     private IEnumerator PlaceBomb()
     {
+        SoundManager.instance.PlaceBomb();
+
         //Lay vi tri duoc lam tron de dat bom
         Vector2 position = this.transform.position;
         position.x = Mathf.Round(position.x);
@@ -56,6 +58,7 @@ public class BombController : MonoBehaviour
         Explode(Vector2.left, position, explosionRadius);
         Explode(Vector2.right, position, explosionRadius);
 
+        SoundManager.instance.BombExplosion();
         Destroy(bomb);
         bombRemain++;
     }

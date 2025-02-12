@@ -30,10 +30,11 @@ public class Enemy : MonoBehaviour
         if (!isMoving)
         {
             StartCoroutine(Move());
-        }
-        Animation(currentDirection);
+            Animation(currentDirection);
+        }   
     }
 
+    //Hàm thiết laajo di chuyển cho enemy
     private IEnumerator Move()
     {
         isMoving = true;
@@ -122,14 +123,14 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
-            currentDirection = Vector2.zero;
+            this.moveSpeed = 0;
             spriteAnimationDown.enabled = false;
             spriteAnimationUp.enabled = false;
             spriteAnimationLeft.enabled = false;
             spriteAnimationRight.enabled = false;
             spriteAnimationDeath.enabled = true;
 
-            Destroy(this.gameObject, 1);
+            Destroy(this.gameObject, 1.25f);
         }
     }
 }
