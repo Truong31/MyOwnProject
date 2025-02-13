@@ -36,6 +36,11 @@ public class LevelSelect : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void ReturnMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     private void AddLevelButton()
     {
         int count = levelButton.transform.childCount;

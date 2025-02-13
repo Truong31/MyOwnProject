@@ -17,6 +17,6 @@ public class MenuController : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene("Levels");
+        SceneManager.LoadScene("SinglePlayer");
     }
 }

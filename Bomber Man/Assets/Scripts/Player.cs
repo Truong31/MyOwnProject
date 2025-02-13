@@ -33,6 +33,11 @@ public class Player : MonoBehaviour
         this.activeSpriteAnimation = spriteAnimationDown;
     }
 
+    private void Start()
+    {
+        GetComponent<CircleCollider2D>().isTrigger = false;
+    }
+
     //NOTE: thiet lap cac nut dieu khien di chuyen cho player
     private void Update()
     {
@@ -85,10 +90,19 @@ public class Player : MonoBehaviour
 
     }
 
+    //Xu ly khi nguoi choi va cham voi vu no
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Explosion")
-            || collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+        {
+            StartCoroutine(PlayerDeath());
+        }
+    }
+
+    //Xu ly khi nguoi choi va cham voi ke thu
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             StartCoroutine(PlayerDeath());
         }
@@ -99,6 +113,7 @@ public class Player : MonoBehaviour
     {
         this.enabled = false;
         GetComponent<BombController>().place = KeyCode.A;
+        GetComponent<CircleCollider2D>().isTrigger = true;
         SoundManager.instance.PlayerDeath();
 
         this.spriteAnimationLeft.enabled = false;
