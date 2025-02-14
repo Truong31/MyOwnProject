@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
         GetComponent<CircleCollider2D>().isTrigger = false;
     }
 
-    //NOTE: thiet lap cac nut dieu khien di chuyen cho player
+    //NOTE: thiết lập các nút điều khiển di chuyển cho player
     private void Update()
     {
         if (Input.GetKey(left))
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
         this.rigidbody2D.MovePosition(position + direction);
     }
 
-    //NOTE: thiet lap huong di chuyen
+    //NOTE: Thiết lập hướng di chuyển
     private void setDirection(Vector2 newDirection, SpriteAnimation spriteAnimation)
     {
         this.moveDirection = newDirection;
