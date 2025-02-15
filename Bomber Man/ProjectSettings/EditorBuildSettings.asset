@@ -12,8 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SinglePlayer.unity
     guid: a9f95ae4889d72a48be99a6d3dbb554c
   - enabled: 1
-    path: Assets/Scenes/PlayerSelect.unity
+    path: Assets/Scenes/SelectPlayer.unity
     guid: 3913045d5101a10428c8ec78821d4cd9
+  - enabled: 1
+    path: Assets/Scenes/SelectMap.unity
+    guid: 8e485ea83768a0342aa629f343968b5a
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 5813ce6581ee6e04cad8c5eadf6e3ecc

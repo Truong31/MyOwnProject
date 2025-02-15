@@ -41,8 +41,9 @@ public class VictoryDoor : MonoBehaviour
             SoundManager.instance.ClearStage();
             yield return new WaitForSeconds(3.0f);
 
-            if(SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("UnlockedLevel", 1))
+            if(SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedLevel"))
             {
+                PlayerPrefs.SetInt("ReachedLevel", SceneManager.GetActiveScene().buildIndex + 1);
                 PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
                 PlayerPrefs.Save();
             }

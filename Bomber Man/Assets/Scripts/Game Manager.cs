@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    /*TODO: Sửa lại khâu mở level mới. Cụ thể nếu hoàn thành level 1, 2 sau đó chơi chơi lại và hoàn thành level 1 thì level 3 vẫn mở
-            Xem lại VictoryDoor
-    */
     public int totalEnemies { get; private set; }
     public float time { get; private set; }
     public TextMeshProUGUI timeText;

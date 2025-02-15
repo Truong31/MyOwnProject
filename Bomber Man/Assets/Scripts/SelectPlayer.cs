@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-public class PlayerSelect : MonoBehaviour
+public class SelectPlayer : MonoBehaviour
 {
     private int numberOfPlayers;
     public TMP_Dropdown dropDown;
