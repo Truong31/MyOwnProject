@@ -32,6 +32,7 @@ public class LevelSelect : MonoBehaviour
     public void ResetLevel()
     {
         PlayerPrefs.SetInt("UnlockedLevel", 1);
+        PlayerPrefs.SetInt("ReachedLevel", 1);
         PlayerPrefs.Save();
         SceneManager.LoadScene("MainMenu");
     }

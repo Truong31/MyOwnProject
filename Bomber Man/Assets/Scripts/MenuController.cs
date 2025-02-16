@@ -15,8 +15,13 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadScene()
+    public void SinglePlayer()
     {
         SceneManager.LoadScene("SinglePlayer");
+    }
+
+    public void TwoPlayers()
+    {
+        SceneManager.LoadScene("SelectMap");
     }
 }

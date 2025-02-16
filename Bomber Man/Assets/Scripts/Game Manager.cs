@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public int totalEnemies { get; private set; }
     public float time { get; private set; }
+    public bool isFinish = false;
     public TextMeshProUGUI timeText;
     public GameObject pausePanel;
 
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(time > 0)
+        if(time > 0 && !isFinish)
         {
             time -= 1 * Time.fixedDeltaTime;   
         }

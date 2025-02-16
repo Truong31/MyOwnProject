@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        // 3. Thực hiện di chuyển mượt mà đến vị trí mục tiêu
+        // 3. Thực hiện di chuyển đến vị trí mục tiêu
         float sqrRemainingDistance = (transform.position - (Vector3)targetPosition).sqrMagnitude;
         while (sqrRemainingDistance > float.Epsilon)
         {
@@ -77,7 +77,6 @@ public class Enemy : MonoBehaviour
     private Vector2 ChooseNewDirection()
     {
         List<Vector2> possibleDirections = new List<Vector2>(directions);
-        possibleDirections.Remove(currentDirection * -1); // Tránh quay đầu ngay lập tức (có thể tùy chỉnh)
 
         List<Vector2> validDirections = new List<Vector2>();
         foreach (Vector2 dir in possibleDirections)
@@ -133,4 +132,5 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject, 1.25f);
         }
     }
+
 }

@@ -25,16 +25,22 @@ public class VictoryDoor : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            Debug.Log("ReachedLevel" + PlayerPrefs.GetInt("ReachedLevel"));
+            Debug.Log("UnlockedLevel" + PlayerPrefs.GetInt("UnlockedLevel", 1));
+            collision.gameObject.GetComponent<Player>().enabled = false;
             StartCoroutine(UnlockLevel());
         }
     }
 
     private IEnumerator UnlockLevel()
     {
+        gameManager.isFinish = true;
         if(PlayerPrefs.GetInt("UnlockedLevel") >= 6)
         {
             SoundManager.instance.ClearAllStage();
             yield return new WaitForSeconds(13.0f);
+
+            SceneManager.LoadScene("MainMenu");
         }
         else
         {
@@ -47,7 +53,8 @@ public class VictoryDoor : MonoBehaviour
                 PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
                 PlayerPrefs.Save();
             }
+            SceneManager.LoadScene("Level" + PlayerPrefs.GetInt("UnlockedLevel", 1));
         }
-        SceneManager.LoadScene("MainMenu");
+        
     }
 }

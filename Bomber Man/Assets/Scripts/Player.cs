@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public GameManager gameManager;
+    public bool inMultiplayer;
 
     [Header("Movement")]
     public float speed = 5.0f;
     private Vector2 moveDirection;
-    public Transform startPosition;
 
     [Header("Control")]
     public KeyCode left = KeyCode.A;
@@ -43,28 +43,31 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(left))
         {
-            setDirection(Vector2.left, spriteAnimationLeft);
+            SetDirection(Vector2.left, spriteAnimationLeft);
         }
         else if (Input.GetKey(right))
         {
-            setDirection(Vector2.right, spriteAnimationRight);
+            SetDirection(Vector2.right, spriteAnimationRight);
         }
         else if (Input.GetKey(up))
         {
-            setDirection(Vector2.up, spriteAnimationUp);
+            SetDirection(Vector2.up, spriteAnimationUp);
         }
         else if (Input.GetKey(down))
         {
-            setDirection(Vector2.down, spriteAnimationDown);
+            SetDirection(Vector2.down, spriteAnimationDown);
         }
         else
         {
-            setDirection(Vector2.zero, activeSpriteAnimation);
+            SetDirection(Vector2.zero, activeSpriteAnimation);
         }
-
-        if(gameManager.time <= 0)
+        
+        if (!inMultiplayer)
         {
-            StartCoroutine(PlayerDeath());
+            if (gameManager.time <= 0)
+            {
+                StartCoroutine(PlayerDeath());
+            }
         }
     }
 
@@ -76,7 +79,7 @@ public class Player : MonoBehaviour
     }
 
     //NOTE: Thiết lập hướng di chuyển
-    private void setDirection(Vector2 newDirection, SpriteAnimation spriteAnimation)
+    private void SetDirection(Vector2 newDirection, SpriteAnimation spriteAnimation)
     {
         this.moveDirection = newDirection;
 
@@ -112,7 +115,7 @@ public class Player : MonoBehaviour
     private IEnumerator PlayerDeath()
     {
         this.enabled = false;
-        GetComponent<BombController>().place = KeyCode.A;
+        GetComponent<BombController>().enabled = false;
         GetComponent<CircleCollider2D>().isTrigger = true;
         SoundManager.instance.PlayerDeath();
 
