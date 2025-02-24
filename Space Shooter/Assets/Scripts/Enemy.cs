@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     private bool isDead = false;
 
     [Range(0.03f, 0.06f)]
-    private float itemSpawnChance = 0.04f;
+    private float itemSpawnChance = 0.03f;
 
     private void Start()
     {
@@ -24,9 +24,10 @@ public class Enemy : MonoBehaviour
         DestroyEnemy();
     }
 
+    //Xu ly Enemy khi va chạm với bullet của người chơi
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isDead) return;
+        if (isDead) return;     //Kiểm tra đã va chạm với Bullet chưa(Đề phòng trường hợp 1 enemy va chạm với nhiều Bullet cùng lúc)
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player Bullet"))
         {
             maxHit--;
