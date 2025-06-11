@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7801202549433677284}
   - component: {fileID: 5619056948467281662}
   - component: {fileID: 9016927453568202603}
-  - component: {fileID: 1965256976948531170}
   - component: {fileID: 8243954586518292281}
+  - component: {fileID: 1965256976948531170}
   m_Layer: 8
   m_Name: Triangle
   m_TagString: Untagged
@@ -95,7 +95,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7025327211081439662}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -114,18 +114,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1965256976948531170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7025327211081439662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73c3a047fc6aac843a4ef27c4fa1e699, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &8243954586518292281
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -170,7 +158,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.00052352995, y: 0.5611291}
-      - {x: -0.4869116, y: -0.2813372}
-      - {x: 0.48691165, y: -0.2808141}
+    - - {x: -0.00021409988, y: 0.5726857}
+      - {x: -0.49478787, y: -0.28511757}
+      - {x: 0.4927981, y: -0.2857198}
   m_UseDelaunayMesh: 0
+--- !u!114 &1965256976948531170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7025327211081439662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c3a047fc6aac843a4ef27c4fa1e699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

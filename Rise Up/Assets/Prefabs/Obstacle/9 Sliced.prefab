@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2159138041426430099}
   - component: {fileID: 8173293047892284520}
   - component: {fileID: 3995697268275561171}
-  - component: {fileID: 5337705428379136688}
   - component: {fileID: 3271297134870176460}
+  - component: {fileID: 5337705428379136688}
   m_Layer: 8
   m_Name: 9 Sliced
   m_TagString: Untagged
@@ -95,7 +95,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612704387845135986}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -114,18 +114,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5337705428379136688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612704387845135986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73c3a047fc6aac843a4ef27c4fa1e699, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &3271297134870176460
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -159,5 +147,17 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.9, y: 0.95}
+  m_Size: {x: 0.94, y: 0.95}
   m_Direction: 0
+--- !u!114 &5337705428379136688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612704387845135986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c3a047fc6aac843a4ef27c4fa1e699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

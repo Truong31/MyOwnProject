@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 9135094640123760941}
   - component: {fileID: 1143277646905286464}
   - component: {fileID: 3091110373980030793}
-  - component: {fileID: 220106919266862516}
   - component: {fileID: 6920280417669633230}
+  - component: {fileID: 220106919266862516}
   m_Layer: 8
   m_Name: Diamond
   m_TagString: Untagged
@@ -95,7 +95,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111749946996146341}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -114,18 +114,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &220106919266862516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111749946996146341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73c3a047fc6aac843a4ef27c4fa1e699, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &6920280417669633230
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -170,8 +158,20 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.23999071}
-      - {x: -0.48544112, y: 0.0009098053}
-      - {x: -0.0014954358, y: -0.24102783}
-      - {x: 0.48635107, y: -0.0009098053}
+    - - {x: -0.00028561428, y: 0.24598837}
+      - {x: -0.49531063, y: 0.00025177002}
+      - {x: 0.0010819817, y: -0.24772882}
+      - {x: 0.49614224, y: -0.00051021576}
   m_UseDelaunayMesh: 0
+--- !u!114 &220106919266862516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111749946996146341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c3a047fc6aac843a4ef27c4fa1e699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

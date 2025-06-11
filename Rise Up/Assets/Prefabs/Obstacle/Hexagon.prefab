@@ -95,7 +95,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4774395166426510262}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -158,12 +158,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.24343875, y: 0.4241166}
-      - {x: -0.48323238, y: 0.002187252}
-      - {x: -0.2434388, y: -0.4204712}
-      - {x: 0.23833558, y: -0.42192936}
-      - {x: 0.4813059, y: 0.001912117}
-      - {x: 0.24552144, y: 0.42295694}
+    - - {x: -0.24683432, y: 0.43284845}
+      - {x: -0.49778482, y: 0.002187252}
+      - {x: -0.24731946, y: -0.43065786}
+      - {x: 0.24755211, y: -0.43211603}
+      - {x: 0.49585837, y: -0.0024533272}
+      - {x: 0.24891703, y: 0.43217373}
   m_UseDelaunayMesh: 0
 --- !u!114 &3303738320156869541
 MonoBehaviour:

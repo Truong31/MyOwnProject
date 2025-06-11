@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
         }   
     }
 
-    //Hàm thiết laajo di chuyển cho enemy
+    //Hàm thiết lap di chuyển cho enemy
     private IEnumerator Move()
     {
         isMoving = true;

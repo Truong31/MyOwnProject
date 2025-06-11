@@ -1,16 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    private new Rigidbody2D rigidbody2D;
-
-    private void Awake()
-    {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        rigidbody2D.isKinematic = true;
-    }
+    //private new Rigidbody2D rigidbody2D;
 
     private void Update()
     {
@@ -21,9 +13,9 @@ public class Obstacle : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        rigidbody2D.isKinematic = false;
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    rigidbody2D.isKinematic = false;
+    //}
 
 }
